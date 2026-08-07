@@ -8,6 +8,7 @@ import { MobileBottomNavigation } from "@/components/layout/mobile-bottom-naviga
 import { OpeningCover } from "@/components/sections/opening-cover";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { AudioPlayer } from "@/components/ui/audio-player";
+import { AutoScrollManager } from "@/components/ui/auto-scroll-manager";
 
 // Heading font — Cormorant Garamond (variable font)
 const cormorant = Cormorant_Garamond({
@@ -84,6 +85,7 @@ export default function RootLayout({
         {/* Floating Utilities */}
         <AudioPlayer />
         <ScrollToTop />
+        <AutoScrollManager />
       </body>
     </html>
   );

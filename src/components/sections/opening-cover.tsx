@@ -54,8 +54,9 @@ export function OpeningCover() {
   const handleClick = () => {
     setIsOpen(false);
     if (typeof window !== "undefined") {
-      // Trigger background music playback after opening cover is opened
+      // Trigger background music playback & slow auto-scroll after opening cover is opened
       window.dispatchEvent(new CustomEvent("start_bg_audio"));
+      window.dispatchEvent(new CustomEvent("start_auto_scroll"));
     }
     // Reset window scroll to top of page immediately on click
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
