@@ -9,6 +9,7 @@ import { OpeningCover } from "@/components/sections/opening-cover";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { AudioPlayer } from "@/components/ui/audio-player";
 import { AutoScrollManager } from "@/components/ui/auto-scroll-manager";
+import { ParticleComponent } from "@/components/ui/particle-component";
 
 // Heading font — Cormorant Garamond (variable font)
 const cormorant = Cormorant_Garamond({
@@ -64,11 +65,14 @@ export default function RootLayout({
       lang="ms"
       className={`${cormorant.variable} ${inter.variable} scroll-smooth`}
     >
-      <body className="min-h-dvh flex flex-col antialiased" style={{ background: "var(--color-brand-ivory)" }}>
+      <body className="min-h-dvh flex flex-col antialiased relative" style={{ background: "var(--color-brand-ivory)" }}>
         {/* Accessibility skip link */}
         <a href="#main-content" className="skip-link">
           Langkau ke kandungan utama
         </a>
+
+        {/* Ambient background particles */}
+        <ParticleComponent particleColor="#BFA800" />
 
         {/* Full-screen Opening Cover / Entrance */}
         <OpeningCover />
