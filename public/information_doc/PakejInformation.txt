@@ -1,0 +1,269 @@
+3 PAKEJ INDIVIDU (Create 3 card section in a row) (When click will popup a modal to explain more)
+
+- (INDIVIDU 10) , RM10 SEBULAN, (0.33 SEN SEHARI)	
+
+[Details information in the popup modal: 
+-Meninggal Biasa - Jumlah RM5000 Seorang
+-RM500, Tahlil dan Khatam Alquran: Diuruskan oleh pihak BJSB (Selepas 30 Hari)
+- RM120, Pakej Kepada Waris (Selepas 60 hari)
+- RM2800 - Wang khairat kepada waris (Selepas 90 hari)
+
+*Meninggal/ Kecacatan kekal Akibat Kemalangan - Maksimum RM5000
+Tertakluk kepada kelulusan pengendali takaful (Selepas 180Hari)
+*Jumlah Manfaat Untuk Kematian Kemalangan: Rm5000 + RM5000]
+
+- INDIVIDU 15, RM15 SEBULAN, (0.49 SEN SEHARI)	
+
+[Details information in the popup modal: 
+-Meninggal Biasa - Jumlah RM7000 Seorang
+-RM500, Tahlil dan Khatam Alquran: Diuruskan oleh pihak BJSB (Selepas 30 Hari)
+- RM180, Pakej Kepada Waris (Selepas 60 hari)
+- RM4820 - Wang khairat kepada waris (Selepas 90 hari)
+
+*Meninggal/ Kecacatan kekal Akibat Kemalangan - Maksimum RM10000
+Tertakluk kepada kelulusan pengendali takaful (Selepas 180Hari)
+*Jumlah Manfaat Untuk Kematian Kemalangan: Rm7000 + RM10000]
+
+-INDIVIDU 20, RM20 SEBULAN, (0.66 SEN SEHARI), (BAWAH 60 TAHUN  SAHAJA)
+
+[Details information in the popup modal: 
+-Meninggal Biasa - Jumlah RM9000 Seorang
+-RM500, Tahlil dan Khatam Alquran: Diuruskan oleh pihak BJSB (Selepas 30 Hari)
+- RM240, Pakej Kepada Waris (Selepas 60 hari)
+- RM6760 - Wang khairat kepada waris (Selepas 90 hari)
+
+*Meninggal/ Kecacatan kekal Akibat Kemalangan - Maksimum RM15000
+Tertakluk kepada kelulusan pengendali takaful (Selepas 180Hari)
+*Jumlah Manfaat Untuk Kematian Kemalangan: Rm9000 + RM15000]
+
+
+3 PAKEJ KELUARGA (Create 3 card section in a row) (When click will popup a modal to explain more)
+
+- KELUARGA 20, (AHLI & PASANGAN + 2 ANAK), RM20 SEBULAN
+(0.66 SEN SEHARI)	
+
+- KELUARGA 30, (AHLI & PASANGAN + 3 ANAK), RM30 SEBULAN, (0.99 SEN SEHARI)	
+
+- KELUARGA 40, (AHLI & PASANGAN + 5 ANAK), RM40 SEBULAN, (1.32 SEN SEHARI)
+(BAWAH 60 TAHUN  SAHAJA)
+
+Extra information about the family package:]
+Salin blok di bawah terus ke fail `.txt`. Gunakan font monospaced seperti **Consolas** atau **Courier New** supaya jadual kekal tersusun.
+
+```text
+==========================================================================================
+                              PAKEJ KELUARGA 20
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 20 SEBULAN (10 + 10)
+AHLI + PASANGAN + 2 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 10 | NILAI PAKEJ 10|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 120            | 120            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 2880           | 2880           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 5000           | 5000           |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 5000 + 5000    | 5000 + 5000    |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 2 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+
+
+==========================================================================================
+                              PAKEJ KELUARGA 25
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 25 SEBULAN (15 + 10)
+AHLI + PASANGAN + 2 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 15 | NILAI PAKEJ 10|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 180            | 120            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 4820           | 2880           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 10000          | 5000           |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 10000 + 7000   | 5000 + 5000    |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 2 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+
+
+==========================================================================================
+                            PAKEJ KELUARGA 30 EMAS
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 30 EMAS SEBULAN (15 + 15)
+AHLI + PASANGAN + 3 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 15 | NILAI PAKEJ 15|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 180            | 180            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 4820           | 4820           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 10000          | 10000          |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 10000 + 7000   | 10000 + 7000   |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 3 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+```
+==========================================================================================
+                         PAKEJ KELUARGA 30 BERLIAN
+                         (BAWAH 60 TAHUN SAHAJA)
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 30 BERLIAN SEBULAN (20 + 30)
+AHLI + PASANGAN + 3 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 20 | NILAI PAKEJ 10|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 240            | 120            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 6760           | 2880           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 15000          | 5000           |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 15000 + 9000   | 5000 + 5000    |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 3 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+
+
+==========================================================================================
+                              PAKEJ KELUARGA 35
+                         (BAWAH 60 TAHUN SAHAJA)
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 35 SEBULAN (20 + 15)
+AHLI + PASANGAN + 4 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 20 | NILAI PAKEJ 15|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 240            | 180            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 6760           | 4820           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 15000          | 10000          |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 15000 + 9000   | 10000 + 7000   |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 4 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+
+
+==========================================================================================
+                              PAKEJ KELUARGA 40
+                         (BAWAH 60 TAHUN SAHAJA)
+==========================================================================================
+
+MANFAAT PAKEJ KELUARGA 35 SEBULAN (20 + 20)
+AHLI + PASANGAN + 5 ORANG ANAK (1 - 17 TAHUN)
+
++----+------------------------------------------------------+----------------+----------------+
+| NO | MANFAAT                                             | AHLI           | PASANGAN      |
+|    |                                                      | NILAI PAKEJ 20 | NILAI PAKEJ 20|
+|    |                                                      | (RM)           | (RM)           |
++----+------------------------------------------------------+----------------+----------------+
+| 1  | Pengurusan Jenazah Lengkap Atau Tunai               | 1500           | 1500           |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 2  | Tahlil Dan Khatam Al Quran: Diuruskan Pihak BJSB     | 500            | 500            |
+|    | (Selepas 30 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 3  | Pakej Kepada Waris (Selepas 60 Hari)                 | 240            | 240            |
++----+------------------------------------------------------+----------------+----------------+
+| 4  | RM2,880 – Wang Khairat Kepada Waris                  | 6760           | 6760           |
+|    | (Selepas 90 Hari)                                    |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 5  | Meninggal / Kecacatan Kekal Akibat Kemalangan       | 15000          | 15000          |
+|    | Tertakluk Kepada Kelulusan Pengendali Takaful        |                |                |
+|    | (Selepas 180 Hari)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
+| 6  | *Jumlah Manfaat Untuk Kematian Kemalangan            | 15000 + 9000   | 15000 + 9000   |
++----+------------------------------------------------------+----------------+----------------+
+| 7  | MANFAAT UNTUK 5 ORANG NAMA YANG DIDAFTARKAN          | 1200           |                |
+|    | (BERUMUR 1 HINGGA 17 TAHUN)                          |                |                |
+|    | Pengurusan Jenazah Lengkap Atau Tunai                |                |                |
+|    | (24 Jam Bersyarat)                                   |                |                |
++----+------------------------------------------------------+----------------+----------------+
