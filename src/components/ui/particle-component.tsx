@@ -8,8 +8,8 @@ interface ParticleComponentProps {
 }
 
 export function ParticleComponent({
-  particleColor = "#BFA800",
-  count = 45,
+  particleColor = "#F60D0D",
+  count = 25,
 }: ParticleComponentProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -36,7 +36,7 @@ export function ParticleComponent({
     const particles = Array.from({ length: count }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 4 + 2, // 2px to 6px
+      radius: Math.random() * 5 + 2, // 2px to 6px
       speedY: Math.random() * 1.5 + 0.8, // downward velocity
       speedX: (Math.random() - 0.5) * 0.4, // slight lateral sway
       opacity: Math.random() * 0.35 + 0.15,
@@ -53,7 +53,7 @@ export function ParticleComponent({
 
         // Gentle opacity pulsation
         p.opacity += Math.sin(Date.now() * p.pulseSpeed) * 0.005;
-        const currentOpacity = Math.max(0.1, Math.min(0.5, p.opacity));
+        const currentOpacity = Math.max(0.1, Math.min(0.3, p.opacity));
 
         // Wrap around when falling past bottom or side boundaries
         if (p.y > height + 10) {
@@ -85,7 +85,7 @@ export function ParticleComponent({
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 pointer-events-none z-[9998]"
       aria-hidden="true"
     />
   );

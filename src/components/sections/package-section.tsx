@@ -279,7 +279,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
               className="text-xl sm:text-2xl font-bold flex items-center gap-2"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800 text-sm font-extrabold">1</span>
+              {/* <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800 text-sm font-extrabold"></span> */}
               3 Pakej Individu
             </h3>
             <span className="text-xs text-slate-500 font-medium hidden sm:inline">
@@ -310,7 +310,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                   <div className="text-center pb-4 mb-4 border-b">
                     <h4
                       className="text-xl font-bold"
-                      style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
+                      style={{ fontFamily: "var(--font-body)", color: "var(--color-brand-green)" }}
                     >
                       {pkg.name}
                     </h4>
@@ -379,7 +379,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
               className="text-xl sm:text-2xl font-bold flex items-center gap-2"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
             >
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-amber-900 text-sm font-extrabold">2</span>
+              {/* <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-100 text-amber-900 text-sm font-extrabold">2</span> */}
               3 Pakej Keluarga
             </h3>
             <span className="text-xs text-slate-500 font-medium hidden sm:inline">
@@ -402,7 +402,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                     className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1 rounded-full px-3.5 py-1 text-[11px] font-extrabold uppercase tracking-wider text-green-950 shadow-md"
                     style={{ background: "var(--color-brand-gold)" }}
                   >
-                    <Star className="h-3 w-3 fill-current" /> Disyorkan Keluarga
+                    <Star className="h-3 w-3 fill-current" /> Disyorkan
                   </div>
                 )}
 
@@ -410,7 +410,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                   <div className="text-center pb-4 mb-4 border-b">
                     <h4
                       className="text-xl font-bold"
-                      style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
+                      style={{ fontFamily: "var(--font-body)", color: "var(--color-brand-green)" }}
                     >
                       {pkg.name}
                     </h4>
@@ -629,7 +629,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                 <h3 className="text-2xl sm:text-3xl font-extrabold mb-1" style={{ fontFamily: "var(--font-heading)" }}>
                   {selectedFormPackage.name}
                 </h3>
-                
+
                 <div className="flex items-center gap-3 mt-2">
                   <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold text-amber-200 border border-white/20">
                     RM{selectedFormPackage.monthlyFee} / sebulan

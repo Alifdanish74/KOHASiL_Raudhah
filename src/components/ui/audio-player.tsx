@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Volume2, VolumeX, Music } from "lucide-react";
+import { Volume2, VolumeX } from "lucide-react";
 
 export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -23,7 +23,7 @@ export function AudioPlayer() {
   };
 
   useEffect(() => {
-    const handleStartAudio = () => {
+    const playAudio = () => {
       if (audioRef.current) {
         audioRef.current
           .play()
@@ -32,8 +32,34 @@ export function AudioPlayer() {
       }
     };
 
+    // Attempt immediate playback on mount (opening-cover step)
+    playAudio();
+
+    // Fallback: If browser policy blocks autoplay without user gesture, trigger on first interaction anywhere
+    const handleFirstInteraction = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        playAudio();
+      }
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+    };
+
+    window.addEventListener("pointerdown", handleFirstInteraction);
+    window.addEventListener("keydown", handleFirstInteraction);
+    window.addEventListener("touchstart", handleFirstInteraction);
+
+    // Also handle explicit custom event (e.g. from Opening Cover Buka button)
+    const handleStartAudio = () => {
+      playAudio();
+    };
+
     window.addEventListener("start_bg_audio", handleStartAudio);
+
     return () => {
+      window.removeEventListener("pointerdown", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
       window.removeEventListener("start_bg_audio", handleStartAudio);
     };
   }, []);
@@ -55,13 +81,14 @@ export function AudioPlayer() {
   }, [isPlaying]);
 
   return (
-    <div className="fixed bottom-20 left-4 z-40 sm:left-6 lg:bottom-8 lg:left-8">
+    <div className="fixed bottom-20 left-4 z-[10000] sm:left-6 lg:bottom-8 lg:left-8">
       <audio
         ref={audioRef}
         src="/assets/Adventurous%20Travel%20Background%20Music%20%231.mp3"
         controlsList="nodownload"
         loop
-        preload="metadata"
+        autoPlay
+        preload="auto"
         className="hidden"
       />
       <motion.button

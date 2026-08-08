@@ -1,15 +1,6 @@
 "use client";
 // File: src/components/sections/opening-cover.tsx
-// KOHASiL Entrance Component — 100% matched to Weddingcard's Entrance.tsx
-// Features:
-// - Shows entrance overlay when user first loads the site
-// - Full screen overlay at z-[9999] covering header, footer & nav
-// - Locks document.body overflow while open (prevents scrolling behind cover)
-// - Blurred full-screen background image (/images/family-hero.png)
-// - Eyebrow in Cinzel uppercase tracking
-// - Product Name in Cormorant Garamond display with scale 0.5 → 1 entrance
-// - Gold "Buka" button with hover/tap animations
-// - Slide-up exit animation: y: 0 → y: -1000, opacity: 1 → 0, duration 0.8s
+// KOHASiL Entrance Component — Revised UI with Logo & Glassmorphic Container (Arch Removed)
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -107,101 +98,116 @@ export function OpeningCover() {
           {/* Subtle white/cream overlay to keep text readable without hiding the image */}
           <div
             className="absolute inset-0 z-[1]"
-            style={{ background: "rgba(240,238,233,0.18)" }}
+            style={{ background: "rgba(240,238,233,0.22)" }}
             aria-hidden="true"
           />
 
-          {/* Central Card — sits above the background, uses dark text to suit the light image */}
-          <div className="relative z-10 flex max-w-sm flex-col items-center px-6 text-center sm:max-w-md">
-            {/* Arch border container — translucent glass card on the light bg */}
+          {/* Central Card — glassmorphism container, arch shape removed */}
+          <div className="relative z-10 flex w-full max-w-sm flex-col items-center px-4 text-center sm:max-w-md">
             <div
-              className="mb-8 w-full max-w-xs overflow-hidden px-6 pb-18 pt-20"
+              className="w-full rounded-3xl px-6 py-8 sm:px-8 sm:py-10 flex flex-col items-center"
               style={{
-                borderRadius: "60% 60% 0 0 / 40% 40% 0 0",
                 border: "1.5px solid var(--color-brand-gold)",
-                background: "rgba(255,255,255,0.55)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                boxShadow: "0 8px 32px rgba(156,4,9,0.10)",
+                background: "rgba(255, 255, 255, 0.85)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                boxShadow: "0 16px 48px rgba(156,4,9,0.12)",
               }}
             >
-              {/* Eyebrow — Cinzel Font Style (matches "Walimatulurus") */}
+              {/* KOHASiL Official Logo Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="mb-5 rounded-2xl bg-white p-3 shadow-md border border-slate-100 flex items-center justify-center"
+              >
+                <img
+                  src="/images/kohasil_logo.jpg"
+                  alt="Logo KOHASiL"
+                  className="h-14 sm:h-16 w-auto object-contain"
+                />
+              </motion.div>
+
+              {/* Eyebrow — Cinzel Font Style */}
               <motion.p
-                initial={{ y: -20, opacity: 0 }}
+                initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="eyebrow-cinzel mb-3"
-                style={{ color: "var(--color-brand-gold)", letterSpacing: "0.22em" }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="eyebrow-cinzel mb-2"
+                style={{ color: "var(--color-brand-gold)", letterSpacing: "0.2em" }}
               >
                 {BRAND.product}
               </motion.p>
 
-              {/* Product Name — Scale 0.5 → 1 (matches Weddingcard Names) */}
-              <div className="mb-3">
-                <motion.h1
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2, ease: "backOut" }}
-                  style={{
-                    fontSize: "clamp(2.25rem, 7vw, 3.5rem)",
-                    fontFamily: "var(--font-heading)",
-                    fontStyle: "italic",
-                    fontWeight: 700,
-                    color: "var(--color-brand-green-dark)",
-                    lineHeight: 1.1,
-                  }}
-                >
-                  {BRAND.name}
-                </motion.h1>
-              </div>
+              {/* Product Name */}
+              <motion.h1
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="mb-2 font-bold italic"
+                style={{
+                  fontSize: "clamp(2.25rem, 7vw, 3.25rem)",
+                  fontFamily: "var(--font-heading)",
+                  color: "var(--color-brand-green-dark)",
+                  lineHeight: 1.1,
+                }}
+              >
+                {BRAND.name}
+              </motion.h1>
+
+              {/* Gold Line Accent */}
+              <div
+                className="my-3 h-0.5 w-16 rounded-full"
+                style={{ background: "var(--color-brand-gold)", opacity: 0.7 }}
+              />
 
               {/* Tagline */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-sm font-medium italic leading-relaxed"
+                className="text-sm sm:text-base font-semibold italic leading-relaxed mb-6"
                 style={{
-                  color: "var(--color-brand-text-muted)",
+                  color: "var(--color-brand-text)",
                   fontFamily: "var(--font-heading)",
                 }}
               >
                 {BRAND.tagline}
               </motion.p>
+
+              {/* Buka Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.5 }}
+                className="w-full flex flex-col items-center gap-3"
+              >
+                <motion.button
+                  onClick={handleClick}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
+                  className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 px-6 text-base font-bold shadow-lg transition-all"
+                  style={{
+                    background: "var(--color-brand-gold)",
+                    color: "var(--color-brand-green-dark)",
+                    boxShadow: "0 6px 24px rgba(191,168,0,0.45)",
+                    touchAction: "manipulation",
+                  }}
+                  type="button"
+                  aria-label="Buka penerangan KOHASiL Raudhah"
+                >
+                  Buka
+                  <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
+                </motion.button>
+
+                <p
+                  className="text-xs font-medium leading-relaxed"
+                  style={{ color: "var(--color-brand-text-muted)" }}
+                >
+                  Klik untuk terokai khidmat bantuan 24 jam.
+                </p>
+              </motion.div>
             </div>
-
-            {/* Buka Button — Matches Weddingcard Entrance Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.5 }}
-              className="flex w-full max-w-xs flex-col items-center gap-3"
-            >
-              <motion.button
-                onClick={handleClick}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 px-6 text-base font-bold shadow-lg transition-all"
-                style={{
-                  background: "var(--color-brand-gold)",
-                  color: "var(--color-brand-green-dark)",
-                  boxShadow: "0 6px 24px rgba(191,168,0,0.45)",
-                  touchAction: "manipulation",
-                }}
-                type="button"
-                aria-label="Buka penerangan KOHASiL Raudhah"
-              >
-                Buka
-                <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
-              </motion.button>
-
-              <p
-                className="text-xs leading-relaxed"
-                style={{ color: "var(--color-brand-text-muted)" }}
-              >
-                Ketahui bantuan pengurusan jenazah 24 jam.
-              </p>
-            </motion.div>
           </div>
         </motion.div>
       )}

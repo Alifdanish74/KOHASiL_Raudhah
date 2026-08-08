@@ -56,7 +56,7 @@ export function HotlineCard({
         href={BRAND.hotlineTel}
         className="font-heading text-3xl font-bold tracking-wide transition-opacity hover:opacity-80"
         style={{
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--font-body)",
           color: isDark || isGlass ? "#fff" : "var(--color-brand-green)",
         }}
         aria-label={`Hubungi ${label}: ${BRAND.hotline}`}

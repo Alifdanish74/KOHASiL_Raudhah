@@ -18,7 +18,7 @@ const modusOperandiSteps = [
     step: "1",
     title: "Waris Menghubungi Hotline 24 Jam",
     detail: "Hubungi talian beroperasi 24 Jam: 011 - 1300 1999 untuk memohon bantuan serta-merta.",
-    image: "/images/sop_step1_hotline.png",
+    image: "/images/sop_step1_calling.png",
     icon: PhoneCall,
   },
   {
@@ -32,12 +32,14 @@ const modusOperandiSteps = [
     step: "3",
     title: "Pengurusan Jenazah Secara Tertib",
     detail: "Kelengkapan dan urusan mandian, kafan, serta solat jenazah diuruskan dengan sempurna.",
+    image: "/images/sop_step3_handling.png",
     icon: HeartHandshake,
   },
   {
     step: "4",
     title: "Pengkebumian Dipastikan Sempurna",
     detail: "Urusan pengebumian diselesaikan dengan penuh penghormatan dan mematuhi syarak.",
+    image: "/images/sop_step4_finishing.png",
     icon: CheckCircle,
   },
 ];
