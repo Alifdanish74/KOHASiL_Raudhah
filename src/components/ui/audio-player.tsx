@@ -115,9 +115,9 @@ export function AudioPlayer() {
           )}
         </div>
 
-        <span className="text-xs font-semibold tracking-wide whitespace-nowrap">
+        {/* <span className="text-xs font-semibold tracking-wide whitespace-nowrap">
           {isPlaying ? "On" : "Off"}
-        </span>
+        </span> */}
 
         {isPlaying && (
           <span className="flex gap-0.5 items-end h-3 ml-0.5">

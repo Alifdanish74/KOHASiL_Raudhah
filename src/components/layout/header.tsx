@@ -53,7 +53,7 @@ export function Header() {
 
         {/* CTA */}
         <a
-          href={`#${SECTION_IDS.hubungi}`}
+          href={`#${SECTION_IDS.pakej}`}
           className="btn-primary hidden text-sm lg:inline-flex"
           style={{ padding: "0.625rem 1.25rem", minHeight: "40px" }}
           aria-label="Daftar sebagai ahli Kohasil Raudhah"
