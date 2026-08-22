@@ -22,14 +22,14 @@ const principles = [
     term: "Tabarru'",
     arabic: "تبرع",
     description:
-      "Sumbangan ikhlas peserta ke dalam dana bersama dengan niat membantu sesama ahli yang memerlukan. Dana ini tidak dimiliki oleh mana-mana individu tetapi diurus bersama untuk kepentingan semua ahli.",
+      "Sumbangan para peserta Takaful ke dalam Dana Risiko yang menyediakan manfaat kewangan bersama untuk membantu sesama peserta/waris apabila berlaku kematian/kemalangan",
   },
   {
     icon: Heart,
     term: "Wakalah",
     arabic: "وكالة",
     description:
-      "Pelantikan Kohasil sebagai wakil peserta untuk mengurus dan mentadbir dana tabarru' dengan beramanah. Kohasil bertindak sebagai pengurus yang dilantik, bukan pemilik dana.",
+      "Pelantikan Kohasil bersama BJSB sebagai wakil peserta untuk melaksanakan usahaniaga Takaful bagi mengurus dana Tabbaru' para peserta dengan beramanah dan yuran wakalah (ujrah) akan disalurkan kepada pihak berkaitan",
   },
 ];
 

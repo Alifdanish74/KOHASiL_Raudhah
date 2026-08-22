@@ -42,8 +42,17 @@
   /* green kept for success states */
 
   /* Typography — loaded via next/font as CSS variables */
-  --font-heading: var(--font-cormorant), Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-playfair), var(--font-cormorant), Georgia, "Times New Roman", serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+/* Ensure full-height lining figures (1, 2, 3, 4) for heading font */
+h1, h2, h3, h4, h5, h6, [style*="font-heading"] {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "lnum" 1, "pnum" 1;
+}
+
+:root {
 
   /* Spacing scale (4px base) */
   --spacing-1: 0.25rem;

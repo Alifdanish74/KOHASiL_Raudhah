@@ -13,6 +13,7 @@ interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   subtitle?: string;
+  subtitle2?: string;
   align?: "left" | "center";
   className?: string;
   titleClassName?: string;
@@ -23,6 +24,7 @@ export function SectionHeading({
   eyebrow,
   title,
   subtitle,
+  subtitle2,
   align = "center",
   className,
   titleClassName,
@@ -98,6 +100,23 @@ export function SectionHeading({
           }}
         >
           {subtitle}
+        </motion.p>
+      )}
+
+      {/* Subtitle 2 */}
+      {subtitle2 && (
+        <motion.p
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          className="text-base leading-relaxed"
+          style={{
+            color: isWhite ? "rgba(255,255,255,0.80)" : "var(--color-brand-text-muted)",
+            fontFamily: "var(--font-body)",
+          }}
+        >
+          {subtitle2}
         </motion.p>
       )}
     </div>

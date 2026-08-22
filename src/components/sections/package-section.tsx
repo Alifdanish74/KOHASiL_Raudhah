@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Star, X, Info, Phone, Send, Loader2, Sparkles, UserCheck } from "lucide-react";
+import { BiMaleFemale } from "react-icons/bi";
+import { FaMale, FaFemale } from "react-icons/fa";
 import { SECTION_IDS, BRAND } from "@/lib/constants";
 import { ResponsiveContainer } from "@/components/ui/responsive-container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -23,6 +25,7 @@ export interface PackageDetail {
     accidentBenefit: string;
     totalAccident: string;
     childBenefit?: string;
+    termAndCondition?: string;
   };
 }
 
@@ -35,10 +38,11 @@ const individuPackages: PackageDetail[] = [
     dailyRate: "0.33 Sen Sehari",
     coverage: "Ahli Sahaja",
     summaryBenefits: [
-      "Kematian Biasa: RM5,000 Seorang",
-      "Kematian Kemalangan: RM10,000 Seorang",
-      "Pengurusan Jenazah Lengkap / Tunai RM1,500",
-      "Wang Khairat Kepada Waris RM2,880"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): RM1,500",
+      "Wang Khairat Kepada Waris: RM2,880",
+      "Dana Kemalangan Diri: RM5,000",
+      "Jumlah Manfaat Kematian Biasa: RM5,000",
+      "Jumlah Manfaat Kematian Kemalangan: RM10,000"
     ],
     modalData: {
       totalNormalDeath: "RM 5,000",
@@ -48,7 +52,7 @@ const individuPackages: PackageDetail[] = [
         { no: 3, benefit: "Pakej Kepada Waris (Selepas 60 Hari)", ahli: "RM 120" },
         { no: 4, benefit: "Wang Khairat Kepada Waris (Selepas 90 Hari)", ahli: "RM 2,880" },
       ],
-      accidentBenefit: "RM 5,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
+      accidentBenefit: "Maksimum RM 5,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
       totalAccident: "RM 5,000 + RM 5,000 = RM 10,000",
     }
   },
@@ -61,10 +65,11 @@ const individuPackages: PackageDetail[] = [
     coverage: "Ahli Sahaja",
     recommended: true,
     summaryBenefits: [
-      "Kematian Biasa: RM7,000 Seorang",
-      "Kematian Kemalangan: RM17,000 Seorang",
-      "Pengurusan Jenazah Lengkap / Tunai RM1,500",
-      "Wang Khairat Kepada Waris RM4,820"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): RM1,5000",
+      "Wang Khairat Kepada Waris: RM4,820",
+      "Dana Kemalangan Diri: RM10,000",
+      "Jumlah Manfaat Kematian Biasa: RM7,000",
+      "Jumlah Manfaat Kematian Kemalangan: RM17,000"
     ],
     modalData: {
       totalNormalDeath: "RM 7,000",
@@ -74,7 +79,7 @@ const individuPackages: PackageDetail[] = [
         { no: 3, benefit: "Pakej Kepada Waris (Selepas 60 Hari)", ahli: "RM 180" },
         { no: 4, benefit: "Wang Khairat Kepada Waris (Selepas 90 Hari)", ahli: "RM 4,820" },
       ],
-      accidentBenefit: "RM 10,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
+      accidentBenefit: "Maksimum RM 10,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
       totalAccident: "RM 7,000 + RM 10,000 = RM 17,000",
     }
   },
@@ -87,10 +92,11 @@ const individuPackages: PackageDetail[] = [
     coverage: "Ahli Sahaja",
     ageRestriction: "Bawah 60 Tahun Sahaja",
     summaryBenefits: [
-      "Kematian Biasa: RM9,000 Seorang",
-      "Kematian Kemalangan: RM24,000 Seorang",
-      "Pengurusan Jenazah Lengkap / Tunai RM1,500",
-      "Wang Khairat Kepada Waris RM6,760"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): RM1,500",
+      "Wang Khairat Kepada Waris: RM6,760",
+      "Dana Kemalangan Diri: RM15,000",
+      "Jumlah Manfaat Kematian Biasa: RM9,000",
+      "Jumlah Manfaat Kematian Kemalangan: RM24,000"
     ],
     modalData: {
       totalNormalDeath: "RM 9,000",
@@ -100,7 +106,7 @@ const individuPackages: PackageDetail[] = [
         { no: 3, benefit: "Pakej Kepada Waris (Selepas 60 Hari)", ahli: "RM 240" },
         { no: 4, benefit: "Wang Khairat Kepada Waris (Selepas 90 Hari)", ahli: "RM 6,760" },
       ],
-      accidentBenefit: "RM 15,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
+      accidentBenefit: "Maksimum RM 15,000 (Meninggal / Kecacatan Kekal Akibat Kemalangan selepas 180 Hari)",
       totalAccident: "RM 9,000 + RM 15,000 = RM 24,000",
     }
   }
@@ -116,9 +122,10 @@ const keluargaPackages: PackageDetail[] = [
     coverage: "Ahli & Pasangan + 2 Anak (1-17 thn)",
     summaryBenefits: [
       "Caruman: Nilai Pakej 10 (Ahli) + Nilai Pakej 10 (Pasangan)",
-      "Perlindungan Tambahan 2 Orang Anak",
-      "Manfaat Pengurusan Jenazah / Tunai RM1,500",
-      "Wang Khairat Ahli RM2,880 & Pasangan RM2,880"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): Ahli RM1,500 & Pasangan RM1,500",
+      "Wang Khairat Kepada Waris: Ahli RM2,880 & Pasangan RM2,880",
+      "Dana Kemalangan Diri: Ahli RM5,000 & Pasangan RM5,000",
+      "Manfaat Untuk 2 Orang Anak Berdaftar Pen. Jenazah Lengkap / Tunai RM1,200 (24 Jam)"
     ],
     modalData: {
       totalNormalDeath: "RM 5,000 (Ahli) + RM 5,000 (Pasangan)",
@@ -143,9 +150,10 @@ const keluargaPackages: PackageDetail[] = [
     recommended: true,
     summaryBenefits: [
       "Caruman: Nilai Pakej 15 (Ahli) + Nilai Pakej 15 (Pasangan)",
-      "Perlindungan Tambahan 3 Orang Anak",
-      "Manfaat Pengurusan Jenazah / Tunai RM1,500",
-      "Wang Khairat Ahli RM4,820 & Pasangan RM4,820"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): Ahli RM1,500 & Pasangan RM1,500",
+      "Wang Khairat Kepada Waris: Ahli RM4,820 & Pasangan RM4,820",
+      "Dana Kemalangan Diri: Ahli RM10,000 & Pasangan RM10,000",
+      "Manfaat Untuk 2 Orang Anak Berdaftar Pen. Jenazah Lengkap / Tunai RM1,200 (24 Jam)"
     ],
     modalData: {
       totalNormalDeath: "RM 7,000 (Ahli) + RM 7,000 (Pasangan)",
@@ -170,9 +178,10 @@ const keluargaPackages: PackageDetail[] = [
     ageRestriction: "Bawah 60 Tahun Sahaja",
     summaryBenefits: [
       "Caruman: Nilai Pakej 20 (Ahli) + Nilai Pakej 20 (Pasangan)",
-      "Perlindungan Tambahan 5 Orang Anak",
-      "Manfaat Pengurusan Jenazah / Tunai RM1,500",
-      "Wang Khairat Ahli RM6,760 & Pasangan RM6,760"
+      "Pengurusan Jenazah Lengkap / Tunai (24 Jam): Ahli RM1,500 & Pasangan RM1,500",
+      "Wang Khairat Kepada Waris: Ahli RM6,760 & Pasangan RM6,760",
+      "Dana Kemalangan Diri: Ahli RM15,000 & Pasangan RM15,000",
+      "Manfaat Untuk 5 Orang Anak Berdaftar Pen. Jenazah Lengkap / Tunai RM1,200 (24 Jam)"
     ],
     modalData: {
       totalNormalDeath: "RM 9,000 (Ahli) + RM 9,000 (Pasangan)",
@@ -188,6 +197,88 @@ const keluargaPackages: PackageDetail[] = [
     }
   }
 ];
+
+const calculateAhliTotal = (items: { ahli: string }[]) => {
+  const sum = items.reduce((acc, item) => {
+    const val = parseInt(item.ahli.replace(/[^0-9]/g, ""), 10) || 0;
+    return acc + val;
+  }, 0);
+  return `RM ${sum.toLocaleString("en-US")}`;
+};
+
+const calculatePasanganTotal = (items: { pasangan?: string }[]) => {
+  const sum = items.reduce((acc, item) => {
+    if (!item.pasangan) return acc;
+    const val = parseInt(item.pasangan.replace(/[^0-9]/g, ""), 10) || 0;
+    return acc + val;
+  }, 0);
+  return `RM ${sum.toLocaleString("en-US")}`;
+};
+
+function FamilyCompositionIcons({ pkgId }: { pkgId: string }) {
+  if (pkgId === "kel-20") {
+    return (
+      <div className="flex items-center justify-center gap-1.5 mt-2 py-1 px-3 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-900 w-fit mx-auto shadow-xs">
+        <div className="flex items-center gap-0.5" title="Ahli & Pasangan (BiMaleFemale)">
+          <BiMaleFemale className="w-5 h-5 text-emerald-700" />
+        </div>
+        <span className="text-[10px] text-emerald-300">+</span>
+        <div className="flex items-center gap-0.5" title="2 Anak (FaMale & FaFemale)">
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaFemale className="w-3.5 h-3.5 text-emerald-600" />
+        </div>
+        {/* <span className="text-[10px] font-bold text-emerald-800 ml-0.5">(2 Anak)</span> */}
+      </div>
+    );
+  }
+
+  if (pkgId === "kel-30") {
+    return (
+      <div className="flex items-center justify-center gap-1.5 mt-2 py-1 px-3 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-900 w-fit mx-auto shadow-xs">
+        <div className="flex items-center gap-0.5" title="Ahli & Pasangan (BiMaleFemale)">
+          <BiMaleFemale className="w-5 h-5 text-emerald-700" />
+        </div>
+        <span className="text-[10px] text-emerald-300">+</span>
+        <div className="flex items-center gap-0.5" title="3 Anak (FaMale & FaFemale selang-seli)">
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaFemale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+        </div>
+        {/* <span className="text-[10px] font-bold text-emerald-800 ml-0.5">(3 Anak)</span> */}
+      </div>
+    );
+  }
+
+  if (pkgId === "kel-40") {
+    return (
+      <div className="flex items-center justify-center gap-1.5 mt-2 py-1 px-3 rounded-full bg-emerald-50 border border-emerald-200/70 text-emerald-900 w-fit mx-auto shadow-xs">
+        <div className="flex items-center gap-0.5" title="Ahli & Pasangan (BiMaleFemale)">
+          <BiMaleFemale className="w-5 h-5 text-emerald-700" />
+        </div>
+        <span className="text-[10px] text-emerald-300">+</span>
+        <div className="flex items-center gap-0.5" title="5 Anak (FaMale & FaFemale selang-seli)">
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaFemale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaFemale className="w-3.5 h-3.5 text-emerald-600" />
+          <FaMale className="w-3.5 h-3.5 text-emerald-600" />
+        </div>
+        {/* <span className="text-[10px] font-bold text-emerald-800 ml-0.5">(5 Anak)</span> */}
+      </div>
+    );
+  }
+
+  // if (pkgId.startsWith("ind-")) {
+  //   return (
+  //     <div className="flex items-center justify-center gap-1 mt-2 py-1 px-3 rounded-full bg-slate-50 border border-slate-200/70 text-slate-700 w-fit mx-auto shadow-xs">
+  //       <FaMale className="w-4 h-4 text-slate-600" />
+  //       {/* <span className="text-[10px] font-bold text-slate-600">(1 Ahli)</span> */}
+  //     </div>
+  //   );
+  // }
+
+  return null;
+}
 
 interface PackageSectionProps {
   onPackageSelect?: (pkgName: string) => void;
@@ -274,16 +365,16 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
 
         {/* ── SECTION: 3 PAKEJ INDIVIDU ── */}
         <div className="mb-16">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col items-center justify-center text-center mb-6">
             <h3
-              className="text-xl sm:text-2xl font-bold flex items-center gap-2"
-              style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
+              className="text-xl sm:text-2xl font-bold flex justify-center items-center gap-2"
+              style={{ fontFamily: "var(--font-body)", color: "var(--color-brand-green)" }}
             >
               {/* <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800 text-sm font-extrabold"></span> */}
               3 Pakej Individu
             </h3>
-            <span className="text-xs text-slate-500 font-medium hidden sm:inline">
-              Klik &quot;Pecahan&quot; untuk jadual manfaat atau &quot;Pilih Pakej Ini&quot; untuk borang pantas
+            <span className="text-xs text-slate-500 font-medium mt-1">
+              Klik &quot;Pecahan&quot; untuk manfaat lanjut atau <br /> &quot;Pilih Pakej Ini&quot; untuk membuat permohonan
             </span>
           </div>
 
@@ -315,6 +406,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                       {pkg.name}
                     </h4>
                     <p className="text-xs text-slate-500 font-medium mt-1">{pkg.coverage}</p>
+                    <FamilyCompositionIcons pkgId={pkg.id} />
                     {pkg.ageRestriction && (
                       <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold">
                         {pkg.ageRestriction}
@@ -333,12 +425,15 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                   </div>
 
                   <ul className="space-y-2.5 mb-6 text-xs text-slate-700">
-                    {pkg.summaryBenefits.map((b, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-emerald-600 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
+                    {pkg.summaryBenefits.map((b, i) => {
+                      const isRed = b.includes("Manfaat Untuk");
+                      return (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className={`h-4 w-4 flex-shrink-0 mt-0.5 ${isRed ? "text-red-600" : "text-emerald-600"}`} />
+                          <span className={isRed ? "text-red-600 font-bold" : ""}>{b}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
@@ -374,7 +469,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
 
         {/* ── SECTION: 3 PAKEJ KELUARGA ── */}
         <div>
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex flex-col items-center justify-center text-center mb-6">
             <h3
               className="text-xl sm:text-2xl font-bold flex items-center gap-2"
               style={{ fontFamily: "var(--font-heading)", color: "var(--color-brand-green)" }}
@@ -415,6 +510,7 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                       {pkg.name}
                     </h4>
                     <p className="text-xs text-slate-500 font-medium mt-1">{pkg.coverage}</p>
+                    <FamilyCompositionIcons pkgId={pkg.id} />
                     {pkg.ageRestriction && (
                       <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold">
                         {pkg.ageRestriction}
@@ -433,12 +529,15 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                   </div>
 
                   <ul className="space-y-2.5 mb-6 text-xs text-slate-700">
-                    {pkg.summaryBenefits.map((b, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-emerald-600 mt-0.5" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
+                    {pkg.summaryBenefits.map((b, i) => {
+                      const isRed = b.includes("Manfaat Untuk");
+                      return (
+                        <li key={i} className="flex items-start gap-2">
+                          <CheckCircle2 className={`h-4 w-4 flex-shrink-0 mt-0.5 ${isRed ? "text-red-600" : "text-emerald-600"}`} />
+                          <span className={isRed ? "text-red-600 font-bold" : ""}>{b}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
 
@@ -537,6 +636,21 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                         </tr>
                       ))}
                     </tbody>
+                    <tfoot className="bg-emerald-50/90 border-t-2 border-emerald-600 font-bold">
+                      <tr>
+                        <td colSpan={2} className="p-3 text-right font-extrabold text-emerald-950 uppercase tracking-wide">
+                          Jumlah Manfaat:
+                        </td>
+                        <td className="p-3 text-right font-extrabold text-emerald-900 text-sm sm:text-base">
+                          {calculateAhliTotal(activeModalPackage.modalData.items)}
+                        </td>
+                        {activeModalPackage.modalData.items[0]?.pasangan && (
+                          <td className="p-3 text-right font-extrabold text-emerald-900 text-sm sm:text-base">
+                            {calculatePasanganTotal(activeModalPackage.modalData.items)}
+                          </td>
+                        )}
+                      </tr>
+                    </tfoot>
                   </table>
                 </div>
 
@@ -546,6 +660,10 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                     <Info className="h-4 w-4" /> Kematian / Kecacatan Kemalangan:
                   </p>
                   <p className="text-slate-700">{activeModalPackage.modalData.accidentBenefit}</p>
+                  <p className="font-extrabold text-green-950 pt-1">
+                    {/* {activeModalPackage.modalData.termAndCondition} */}
+                    *(Tertakluk Kelulusan Takaful)
+                  </p>
                   <p className="font-extrabold text-green-950 pt-1">
                     *Jumlah Manfaat Kemalangan: {activeModalPackage.modalData.totalAccident}
                   </p>

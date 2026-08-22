@@ -58,6 +58,7 @@ export function IntroductionSection() {
           eyebrow="Pengenalan Skim"
           title="Khidmat Pengurusan Jenazah & Khairat Kematian"
           subtitle="Khidmat yang ditawarkan adalah pengurusan jenazah lengkap (muslim) terus ke lokasi yang diminta waris (rumah / hospital). Perlindungan merangkumi seluruh Malaysia termasuk Sabah dan Sarawak."
+          subtitle2="Khidmat Pengurusan Jenazah Lengkap meliputi: 1. Bantuan Nasihat 2. Memandikan Jenazah 3. Mengkafankan Jenazah 4. Menguruskan Solat Jenazah 5. Khidmat Van Jenazah 6. Menguruskan Pengkebumian"
           className="mb-12"
         />
 

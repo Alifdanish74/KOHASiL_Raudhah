@@ -1,6 +1,6 @@
 // File: src/app/layout.tsx
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -11,7 +11,16 @@ import { AudioPlayer } from "@/components/ui/audio-player";
 import { AutoScrollManager } from "@/components/ui/auto-scroll-manager";
 import { ParticleComponent } from "@/components/ui/particle-component";
 
-// Heading font — Cormorant Garamond (variable font)
+// Primary Heading font — Playfair Display (full-height lining numbers, elegant high-contrast serif)
+const playfair = Playfair_Display({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+  preload: true,
+});
+
+// Secondary Heading font — Cormorant Garamond
 const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -63,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="ms"
-      className={`${cormorant.variable} ${inter.variable} scroll-smooth`}
+      className={`${playfair.variable} ${cormorant.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="min-h-dvh flex flex-col antialiased relative" style={{ background: "var(--color-brand-ivory)" }}>
         {/* Accessibility skip link */}
