@@ -5,6 +5,7 @@ export const BRAND = {
   tagline: "Perlindungan Dengan Ketenangan",
   description: "Skim bantuan pengurusan jenazah 24 jam dan manfaat khairat untuk membantu meringankan urusan keluarga.",
   hotline: "011-1300 1999",
+  hotline_whatsapp: "011-1497-7733",
   hotlineTel: "tel:01113001999",
   product: "My Sakinah Pro",
 } as const;

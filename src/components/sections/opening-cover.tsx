@@ -104,7 +104,7 @@ export function OpeningCover() {
 
           {/* Central Card — glassmorphism container, arch shape removed */}
           <div className="relative z-10 flex w-full max-w-sm flex-col items-center px-4 text-center sm:max-w-md">
-            <div
+            {/* <div
               className="w-full rounded-3xl px-6 py-8 sm:px-8 sm:py-10 flex flex-col items-center"
               style={{
                 border: "1.5px solid var(--color-brand-gold)",
@@ -113,101 +113,123 @@ export function OpeningCover() {
                 WebkitBackdropFilter: "blur(12px)",
                 boxShadow: "0 16px 48px rgba(156,4,9,0.12)",
               }}
+            > */}
+            {/* KOHASiL Official Logo Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-5 rounded-2xl bg-white p-3 shadow-md border border-slate-100 flex items-center justify-center"
             >
-              {/* KOHASiL Official Logo Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="mb-5 rounded-2xl bg-white p-3 shadow-md border border-slate-100 flex items-center justify-center"
-              >
-                <img
-                  src="/images/kohasil_logo.jpg"
-                  alt="Logo KOHASiL"
-                  className="h-14 sm:h-16 w-auto object-contain"
-                />
-              </motion.div>
-
-              {/* Eyebrow — Cinzel Font Style */}
-              <motion.p
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.2 }}
-                className="eyebrow-cinzel mb-2"
-                style={{ color: "var(--color-brand-gold)", letterSpacing: "0.2em" }}
-              >
-                {BRAND.product}
-              </motion.p>
-
-              {/* Product Name */}
-              <motion.h1
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="mb-2 font-bold italic"
-                style={{
-                  fontSize: "clamp(2.25rem, 7vw, 3.25rem)",
-                  fontFamily: "var(--font-heading)",
-                  color: "var(--color-brand-green-dark)",
-                  lineHeight: 1.1,
-                }}
-              >
-                {BRAND.name}
-              </motion.h1>
-
-              {/* Gold Line Accent */}
-              <div
-                className="my-3 h-0.5 w-16 rounded-full"
-                style={{ background: "var(--color-brand-gold)", opacity: 0.7 }}
+              <img
+                src="/images/kohasil_logo.jpg"
+                alt="Logo KOHASiL"
+                className="h-14 sm:h-16 w-auto object-contain"
               />
+            </motion.div>
 
-              {/* Tagline */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-sm sm:text-base font-semibold italic leading-relaxed mb-6"
+            {/* Eyebrow — Cinzel Font Style */}
+            <motion.p
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="eyebrow-cinzel mb-2"
+              style={{ color: "var(--color-brand-text)", letterSpacing: "0.2em" }}
+            >
+              {BRAND.product}
+            </motion.p>
+
+            {/* Product Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-2 font-bold italic"
+              style={{
+                fontSize: "clamp(2.25rem, 7vw, 3.25rem)",
+                fontFamily: "var(--font-heading)",
+                color: "var(--color-brand-green-dark)",
+                lineHeight: 1.1,
+              }}
+            >
+              {BRAND.name}
+            </motion.h1>
+
+            {/* Gold Line Accent */}
+            <div
+              className="my-3 h-0.5 w-16 rounded-full"
+              style={{ background: "var(--color-brand-gold)", opacity: 0.7 }}
+            />
+
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-sm sm:text-base font-semibold italic leading-relaxed mb-6"
+              style={{
+                color: "var(--color-brand-text)",
+                fontFamily: "var(--font-heading)",
+              }}
+            >
+              {BRAND.tagline}
+            </motion.p>
+
+            {/* Buka Button & Notice */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              className="w-full flex flex-col items-center gap-3"
+            >
+              {/* Notice Button above Buka */}
+              <motion.button
+                onClick={handleClick}
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                className="w-full flex flex-col items-center justify-center rounded-2xl py-3 px-5 text-white border-4 shadow-lg transition-all"
                 style={{
-                  color: "var(--color-brand-text)",
-                  fontFamily: "var(--font-heading)",
+                  background: "#242FA4",
+                  borderColor: "#F0F00E",
+                  boxShadow: "0 6px 20px rgba(10 75 155 / 0.4)",
+                  touchAction: "manipulation",
                 }}
+                type="button"
               >
-                {BRAND.tagline}
-              </motion.p>
+                <span className="text-sm sm:text-base font-extrabold tracking-wide uppercase text-white">
+                  TERBUKA KEPADA BUKAN AHLI KOHASIL
+                </span>
+                <span className="text-xs font-bold tracking-wider uppercase mt-0.5" style={{ color: "#F0F00E" }}>
+                  SEMUA STAF LHDN DIJEMPUT MENYERTAI
+                </span>
+              </motion.button>
 
-              {/* Buka Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.5 }}
-                className="w-full flex flex-col items-center gap-3"
+              <motion.button
+                onClick={handleClick}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 px-6 text-base font-bold shadow-lg transition-all"
+                style={{
+                  background: "var(--color-brand-gold)",
+                  color: "var(--color-brand-green-dark)",
+                  boxShadow: "0 6px 24px rgba(191,168,0,0.45)",
+                  touchAction: "manipulation",
+                }}
+                type="button"
+                aria-label="Buka penerangan KOHASiL Raudhah"
               >
-                <motion.button
-                  onClick={handleClick}
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.96 }}
-                  className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 px-6 text-base font-bold shadow-lg transition-all"
-                  style={{
-                    background: "var(--color-brand-gold)",
-                    color: "var(--color-brand-green-dark)",
-                    boxShadow: "0 6px 24px rgba(191,168,0,0.45)",
-                    touchAction: "manipulation",
-                  }}
-                  type="button"
-                  aria-label="Buka penerangan KOHASiL Raudhah"
-                >
-                  Buka
-                  <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
-                </motion.button>
+                Buka
+                <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
+              </motion.button>
 
-                <p
-                  className="text-xs font-medium leading-relaxed"
-                  style={{ color: "var(--color-brand-text-muted)" }}
-                >
-                  Klik untuk terokai khidmat bantuan 24 jam.
-                </p>
-              </motion.div>
-            </div>
+              <p
+                className="text-xs font-medium leading-relaxed"
+                style={{ color: "var(--color-brand-text-muted)" }}
+              >
+                Klik untuk terokai khidmat bantuan 24 jam.
+              </p>
+            </motion.div>
+            {/* </div> */}
           </div>
         </motion.div>
       )}

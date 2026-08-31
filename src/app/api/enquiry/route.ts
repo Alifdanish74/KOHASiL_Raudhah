@@ -26,10 +26,17 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
       nama: parsed.data.nama,
       telefon: parsed.data.telefon,
+      ic: parsed.data.ic || "-",
+      alamat1: parsed.data.alamat1 || "-",
+      alamat2: parsed.data.alamat2 || "-",
+      negeri: parsed.data.negeri || "-",
+      namaWaris: parsed.data.namaWaris || "-",
+      telefonWaris: parsed.data.telefonWaris || "-",
+      statusKeahlian: parsed.data.statusKeahlian || "-",
       noAhli: parsed.data.noAhli || "-",
       pakej: parsed.data.pakej,
       lindungiIbuBapa: parsed.data.lindungiIbuBapa === "ya" ? "Ya (RM10/bln)" : "Tidak",
-      kaedahHubungi: parsed.data.kaedahHubungi.toUpperCase(),
+      kaedahHubungi: parsed.data.kaedahHubungi ? parsed.data.kaedahHubungi.toUpperCase() : "WHATSAPP",
       sheetId: "1cjcftRUTdQhmPegnMtNmVShdjWanzuTVGX7dStiYa-Y",
     };
 

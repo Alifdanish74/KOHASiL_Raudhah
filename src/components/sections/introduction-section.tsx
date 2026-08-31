@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { PhoneCall, ShieldCheck, HeartHandshake, Sparkles, MapPin, CheckCircle } from "lucide-react";
+import { PhoneCall, HeartHandshake, Sparkles, MapPin, CheckCircle } from "lucide-react";
 import { BRAND, SECTION_IDS } from "@/lib/constants";
 import { ResponsiveContainer } from "@/components/ui/responsive-container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -74,11 +74,13 @@ export function IntroductionSection() {
             borderColor: "var(--color-brand-sage-muted)",
           }}
         >
-          <div
-            className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl text-white shadow-md"
-            style={{ background: "var(--color-brand-green)" }}
-          >
-            <ShieldCheck className="h-8 w-8" />
+          <div className="relative h-25 w-50 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border border-amber-200/50">
+            <Image
+              src="/images/preparation.png"
+              alt="Kemudahan Tanpa Bebanan Kos"
+              fill
+              className="object-cover"
+            />
           </div>
           <div>
             <h3
