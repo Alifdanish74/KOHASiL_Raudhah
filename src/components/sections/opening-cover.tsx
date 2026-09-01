@@ -109,7 +109,7 @@ export function OpeningCover() {
               <img
                 src="/images/kohasil_logo.jpg"
                 alt="Logo KOHASiL"
-                className="h-8 sm:h-11 lg:h-14 w-auto object-contain"
+                className="h-15 sm:h-15 lg:h-15 w-auto object-contain"
               />
             </motion.div>
 
@@ -118,7 +118,7 @@ export function OpeningCover() {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="eyebrow-cinzel mb-0.5 sm:mb-1 text-[9px] sm:text-[10px] lg:text-xs"
+              className="eyebrow-cinzel my-5 sm:my-5 text-2xl sm:text-2xl lg:text-3xl"
               style={{ color: "var(--color-brand-text)", letterSpacing: "0.18em" }}
             >
               {BRAND.product}
@@ -129,9 +129,9 @@ export function OpeningCover() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-1 sm:mb-1.5 font-bold italic"
+              className="mb-1 sm:mb-1.5 font-bold italic text-3xl sm:text-3xl lg:text-4xl"
               style={{
-                fontSize: "clamp(1.25rem, 3.5vw, 2.25rem)",
+                // fontSize: "clamp(1.25rem, 3.5vw, 2.25rem)",
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-green-dark)",
                 lineHeight: 1.1,
@@ -151,7 +151,7 @@ export function OpeningCover() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-[11px] sm:text-xs lg:text-sm font-semibold italic leading-snug mb-2 sm:mb-4 sm:mb-5"
+              className="text-[11px] sm:text-xs lg:text-sm font-semibold italic leading-snug my-5 sm:mb-4 sm:mb-5"
               style={{
                 color: "var(--color-brand-text)",
                 fontFamily: "var(--font-heading)",
@@ -172,7 +172,7 @@ export function OpeningCover() {
                 onClick={handleClick}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full flex flex-col items-center justify-center rounded-xl sm:rounded-2xl py-1.5 px-3 sm:py-2.5 sm:px-4 text-white border-2 shadow-md transition-all"
+                className="w-full flex flex-col my-2 items-center justify-center rounded-xl sm:rounded-2xl py-1.5 px-3 sm:py-2.5 sm:px-4 text-white border-2 shadow-md transition-all"
                 style={{
                   background: "#242FA4",
                   borderColor: "#F0F00E",

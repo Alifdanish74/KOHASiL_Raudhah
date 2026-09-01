@@ -1189,621 +1189,621 @@ export function PackageSection({ onPackageSelect }: PackageSectionProps) {
                       <Info className="h-4 w-4 text-amber-700 flex-shrink-0 mt-0.5" />
                       <p className="font-bold text-amber-900 leading-snug">
                         1. Meninggal / Kecacatan Kekal Akibat Kemalangan : <strong>Maksimum Tertakluk Kepada Kelulusan Pengendali Takaful </strong>(Selepas 180 Hari)
-                      <br />
-                      <br />
-                      2. Untuk Non Muslim : Bantuan Tunai Kebajikan akan diberikan kepada waris dalam tempoh 24 Jam setelah laporan kematian diterima dan disahkan
-                    </p>
-                  </div>
-
-                    {/* Child Benefit Box if present */ }
-                {
-                  currentModalData.childBenefit && (
-                    <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm">
-                      <p className="font-bold text-emerald-900">Manfaat Pakej Anak:</p>
-                      <p className="text-slate-700 mt-1">{currentModalData.childBenefit}</p>
+                        <br />
+                        <br />
+                        2. Untuk Non Muslim : Bantuan Tunai Kebajikan akan diberikan kepada waris dalam tempoh 24 Jam setelah laporan kematian diterima dan disahkan
+                      </p>
                     </div>
-                  )
-                }
+
+                    {/* Child Benefit Box if present */}
+                    {
+                      currentModalData.childBenefit && (
+                        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm">
+                          <p className="font-bold text-emerald-900">Manfaat Pakej Anak:</p>
+                          <p className="text-slate-700 mt-1">{currentModalData.childBenefit}</p>
+                        </div>
+                      )
+                    }
                   </div>
-        );
+                );
               })()}
 
-        {/* Modal Actions */}
-        <div className="flex gap-3 pt-2">
-          <button
-            onClick={() => {
-              const pkg = activeModalPackage;
-              setActiveModalPackage(null);
-              handleOpenFormModal(pkg);
-            }}
-            className="flex-1 py-3 rounded-xl text-sm font-bold text-white shadow-md transition-all hover:opacity-95 flex items-center justify-center gap-2"
-            style={{ background: "var(--color-brand-green)" }}
-            type="button"
-          >
-            <Send className="h-4 w-4" />
-            Pilih Pakej Ini Sekarang
-          </button>
-          <button
-            onClick={() => setActiveModalPackage(null)}
-            className="px-5 py-3 rounded-xl text-sm font-semibold border text-slate-600 hover:bg-slate-100 transition-colors"
-            type="button"
-          >
-            Tutup
-          </button>
-        </div>
-      </motion.div>
-    </div>
-  )
-}
+              {/* Modal Actions */}
+              <div className="flex gap-3 pt-2">
+                <button
+                  onClick={() => {
+                    const pkg = activeModalPackage;
+                    setActiveModalPackage(null);
+                    handleOpenFormModal(pkg);
+                  }}
+                  className="flex-1 py-3 rounded-xl text-sm font-bold text-white shadow-md transition-all hover:opacity-95 flex items-center justify-center gap-2"
+                  style={{ background: "var(--color-brand-green)" }}
+                  type="button"
+                >
+                  <Send className="h-4 w-4" />
+                  Pilih Pakej Ini Sekarang
+                </button>
+                <button
+                  onClick={() => setActiveModalPackage(null)}
+                  className="px-5 py-3 rounded-xl text-sm font-semibold border text-slate-600 hover:bg-slate-100 transition-colors"
+                  type="button"
+                >
+                  Tutup
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )
+        }
       </AnimatePresence >
 
-  {/* ── MODAL 2: DEDICATED PACKAGE FORM POPUP MODAL ── */ }
-  <AnimatePresence>
-{
-  selectedFormPackage && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70 backdrop-blur-md overflow-y-auto">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ duration: 0.25, ease: "easeOut" }}
-        className="relative w-full max-w-lg max-h-[90vh] my-auto rounded-3xl bg-white shadow-2xl overflow-hidden border flex flex-col"
-        style={{ borderColor: "var(--color-brand-gold)" }}
-      >
-        {/* Close Button */}
-        <button
-          onClick={() => setSelectedFormPackage(null)}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full text-white/80 hover:text-white hover:bg-white/20 transition-colors"
-          type="button"
-          aria-label="Tutup borang"
-        >
-          <X className="h-5 w-5" />
-        </button>
+      {/* ── MODAL 2: DEDICATED PACKAGE FORM POPUP MODAL ── */}
+      <AnimatePresence>
+        {
+          selectedFormPackage && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/70 backdrop-blur-md overflow-y-auto">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="relative w-full max-w-lg max-h-[90vh] my-auto rounded-3xl bg-white shadow-2xl overflow-hidden border flex flex-col"
+                style={{ borderColor: "var(--color-brand-gold)" }}
+              >
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedFormPackage(null)}
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full text-white/80 hover:text-white hover:bg-white/20 transition-colors"
+                  type="button"
+                  aria-label="Tutup borang"
+                >
+                  <X className="h-5 w-5" />
+                </button>
 
-        {/* Modal Top Banner Header */}
-        <div
-          className="p-5 sm:p-6 text-white relative flex-shrink-0"
-          style={{
-            background: "linear-gradient(135deg, var(--color-brand-green) 0%, #0d3824 100%)",
-          }}
-        >
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400 text-green-950 font-bold text-xs">
-              <Sparkles className="h-4 w-4" />
-            </span>
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
-              Borang Permohonan Pakej
-            </span>
-          </div>
-
-          <h3 className="text-xl sm:text-2xl font-extrabold mb-1" style={{ fontFamily: "var(--font-heading)" }}>
-            {selectedFormPackage.name}
-          </h3>
-
-          <div className="flex items-center gap-2 mt-1.5 flex-wrap">
-            <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold text-amber-200 border border-white/20">
-              RM{getCalculatedMonthlyFee()} / sebulan
-            </span>
-            {selectedFormPackage.category === "individu" && individuDependents.length > 0 && (
-              <span className="text-[11px] text-amber-300 font-semibold bg-black/20 px-2.5 py-0.5 rounded-full border border-amber-300/30">
-                (RM{selectedFormPackage.monthlyFee} + {individuDependents.length} Tanggungan x RM10)
-              </span>
-            )}
-            <span className="text-xs text-white/80 font-medium">
-              {selectedFormPackage.coverage}
-            </span>
-          </div>
-        </div>
-
-        {/* Modal Content Body - Scrollable */}
-        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
-          {(() => {
-            const memberTabs = getTabsForCurrentPackage();
-            const currentTabObj = memberTabs.find((t) => t.id === activeMemberTab) || memberTabs[0];
-            const currentMemberData = membersData[activeMemberTab] || {
-              nama: "",
-              telefon: "",
-              ic: "",
-              alamat1: "",
-              alamat2: "",
-              alamat3: "",
-              negeri: "",
-              sameAddressAsAhli: false,
-            };
-
-            if (formStatus === "success") {
-              return (
-                <div className="text-center py-6 space-y-5">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mx-auto shadow-md">
-                    <UserCheck className="h-8 w-8" />
-                  </div>
-                  <div>
-                    <h4 className="text-2xl font-bold text-green-900 mb-2">
-                      Permohonan Berjaya!
-                    </h4>
-                    <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
-                      Maklumat bagi <strong>{selectedFormPackage.name}</strong> telah berjaya disimpan ke dalam sistem. Pegawai kami akan menghubungi anda.
-                    </p>
+                {/* Modal Top Banner Header */}
+                <div
+                  className="p-5 sm:p-6 text-white relative flex-shrink-0"
+                  style={{
+                    background: "linear-gradient(135deg, var(--color-brand-green) 0%, #0d3824 100%)",
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400 text-green-950 font-bold text-xs">
+                      <Sparkles className="h-4 w-4" />
+                    </span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-300">
+                      Borang Permohonan Pakej
+                    </span>
                   </div>
 
-                  <div className="pt-3 space-y-2">
-                    <a
-                      href={`https://wa.me/601113001999?text=Salam%20Kohasil,%20saya%20telah%20menghantar%20permohonan%20pakej%20${encodeURIComponent(selectedFormPackage.name)}.%20Boleh%20bantu%20pengesahan?`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white shadow-md transition-all hover:opacity-95"
-                      style={{ background: "#25D366" }}
-                    >
-                      <Phone className="h-4 w-4" />
-                      Hubungi WhatsApp Terus (011-1300 1999)
-                    </a>
+                  <h3 className="text-xl sm:text-2xl font-extrabold mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+                    {selectedFormPackage.name}
+                  </h3>
 
-                    <button
-                      onClick={() => setSelectedFormPackage(null)}
-                      className="w-full py-2.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
-                      type="button"
-                    >
-                      Tutup Borang
-                    </button>
+                  <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+                    <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-xs font-bold text-amber-200 border border-white/20">
+                      RM{getCalculatedMonthlyFee()} / sebulan
+                    </span>
+                    {selectedFormPackage.category === "individu" && individuDependents.length > 0 && (
+                      <span className="text-[11px] text-amber-300 font-semibold bg-black/20 px-2.5 py-0.5 rounded-full border border-amber-300/30">
+                        (RM{selectedFormPackage.monthlyFee} + {individuDependents.length} Tanggungan x RM10)
+                      </span>
+                    )}
+                    <span className="text-xs text-white/80 font-medium">
+                      {selectedFormPackage.coverage}
+                    </span>
                   </div>
                 </div>
-              );
-            }
 
-            if (formStep === "declaration") {
-              return (
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-lg font-bold text-green-950 mb-1" style={{ fontFamily: "var(--font-heading)" }}>
-                      Pengisytiharan &amp; Pengesahan
-                    </h4>
-                    <p className="text-xs text-slate-500">
-                      Sila semak pengisytiharan berikut sebelum menghantar permohonan {selectedFormPackage.name}.
-                    </p>
-                  </div>
+                {/* Modal Content Body - Scrollable */}
+                <div className="p-5 sm:p-6 overflow-y-auto flex-1">
+                  {(() => {
+                    const memberTabs = getTabsForCurrentPackage();
+                    const currentTabObj = memberTabs.find((t) => t.id === activeMemberTab) || memberTabs[0];
+                    const currentMemberData = membersData[activeMemberTab] || {
+                      nama: "",
+                      telefon: "",
+                      ic: "",
+                      alamat1: "",
+                      alamat2: "",
+                      alamat3: "",
+                      negeri: "",
+                      sameAddressAsAhli: false,
+                    };
 
-                  {/* Family Members Summary Card */}
-                  <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-                    <p className="text-xs font-extrabold uppercase tracking-wider text-green-900 border-b pb-1.5 flex items-center justify-between">
-                      <span>Senarai Ahli Berdaftar ({memberTabs.length}):</span>
-                    </p>
-                    <div className="space-y-1.5 max-h-36 overflow-y-auto text-xs text-slate-700">
-                      {memberTabs.map((t) => {
-                        const m = membersData[t.id];
-                        const hasData = m && (m.nama.trim() || m.ic.trim());
-                        return (
-                          <div key={t.id} className="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
-                            <span className="font-semibold text-slate-900">
-                              {t.label}: {hasData ? m.nama : <span className="text-slate-400 font-normal italic">(Belum diisi)</span>}
-                            </span>
-                            <span className="text-[11px] text-slate-500 font-mono">
-                              {hasData ? m.ic : "-"}
-                            </span>
+                    if (formStatus === "success") {
+                      return (
+                        <div className="text-center py-6 space-y-5">
+                          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 mx-auto shadow-md">
+                            <UserCheck className="h-8 w-8" />
                           </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                          <div>
+                            <h4 className="text-2xl font-bold text-green-900 mb-2">
+                              Permohonan Berjaya!
+                            </h4>
+                            <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
+                              Maklumat bagi <strong>{selectedFormPackage.name}</strong> telah berjaya disimpan ke dalam sistem. Pegawai kami akan menghubungi anda.
+                            </p>
+                          </div>
 
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
-                    <p>
-                      Saya (dan keluarga saya jika pakej keluarga / jika ada tambahan) dengan ini mengemukakan permohonan untuk mendaftar sebagai ahli Skim Khairat Kohasil Raudhah. Saya juga memperakui semua maklumat yang diberikan adalah benar dan saya juga telah membaca dan memahami serta bersetuju untuk mematuhi semua terma dan syarat Skim Khairat ini. Saya dengan fikiran waras dan tanpa paksaan mana – mana pihak dengan ini bersetuju untuk menyertai Skim Khairat ini dengan jumlah potongan gaji bulanan sebanyak <strong className="text-green-950 font-extrabold text-sm sm:text-base border-b-2 border-green-800">RM{getCalculatedMonthlyFee() + (warisData.statusKeahlian === "bukan_ahli" ? 1 : 0)}</strong> sebulan.
-                    </p>
-                  </div>
+                          <div className="pt-3 space-y-2">
+                            <a
+                              href={`https://wa.me/601113001999?text=Salam%20Kohasil,%20saya%20telah%20menghantar%20permohonan%20pakej%20${encodeURIComponent(selectedFormPackage.name)}.%20Boleh%20bantu%20pengesahan?`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-bold text-white shadow-md transition-all hover:opacity-95"
+                              style={{ background: "#25D366" }}
+                            >
+                              <Phone className="h-4 w-4" />
+                              Hubungi WhatsApp Terus (011-1300 1999)
+                            </a>
 
-                  {/* Red Color Font Notice Box */}
-                  <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs sm:text-sm text-red-700 space-y-2">
-                    {selectedFormPackage.category === "individu" && (
-                      <p className="font-bold text-amber-900 leading-snug pb-1 border-b border-amber-200">
-                        Nota Pakej Individu: Setiap tambahan 1 orang tanggungan dikenakan caj RM10/sebulan (Maksimum 5 orang). Jumlah tanggungan semasa: {individuDependents.length} orang (+RM{individuDependents.length * 10}/sebulan).
-                      </p>
-                    )}
-                    <p className="font-bold text-red-800 leading-snug">
-                      Penting : Untuk Bukan Ahli Kohasil, Caj Tambahan sebanyak RM1 akan dikenakan untuk setiap potongan gaji bulanan. Contoh Pakej Keluarga 20 + Ibu Individu 10 : Potongan Bulanan adalah RM30 + RM1 = RM31 sebulan
-                    </p>
-                    <p className="font-semibold text-red-700 leading-snug">
-                      Jika pakej keluarga , Sila hubungi kami untuk menambah nama anak jika mendapat anak baharu (apabila berumur 1 tahun) bagi memenuhi kuota pakej keluarga tersebut.Tertakluk kepada kategori pakej keluarga
-                    </p>
-                  </div>
+                            <button
+                              onClick={() => setSelectedFormPackage(null)}
+                              className="w-full py-2.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
+                              type="button"
+                            >
+                              Tutup Borang
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    }
 
-                  {/* Final Declaration Submission Form */}
-                  <form onSubmit={handleFormSubmit} className="space-y-4 pt-2">
-                    <label className="flex items-start gap-3 cursor-pointer p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200 hover:bg-emerald-100/60 transition-colors">
-                      <input
-                        type="checkbox"
-                        checked={declarationAgreed}
-                        onChange={(e) => setDeclarationAgreed(e.target.checked)}
-                        className="mt-0.5 h-4 w-4 rounded accent-green-800 cursor-pointer flex-shrink-0"
-                      />
-                      <span className="text-xs sm:text-sm font-bold text-green-950">
-                        * Dengan klik “Saya Setuju”, saya bersetuju dengan terma dan syarat yang dinyatakan di atas
-                      </span>
-                    </label>
+                    if (formStep === "declaration") {
+                      return (
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-lg font-bold text-green-950 mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+                              Pengisytiharan &amp; Pengesahan
+                            </h4>
+                            <p className="text-xs text-slate-500">
+                              Sila semak pengisytiharan berikut sebelum menghantar permohonan {selectedFormPackage.name}.
+                            </p>
+                          </div>
 
-                    {errorMessage && (
-                      <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
-                        {errorMessage}
-                      </div>
-                    )}
+                          {/* Family Members Summary Card */}
+                          <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                            <p className="text-xs font-extrabold uppercase tracking-wider text-green-900 border-b pb-1.5 flex items-center justify-between">
+                              <span>Senarai Ahli Berdaftar ({memberTabs.length}):</span>
+                            </p>
+                            <div className="space-y-1.5 max-h-36 overflow-y-auto text-xs text-slate-700">
+                              {memberTabs.map((t) => {
+                                const m = membersData[t.id];
+                                const hasData = m && (m.nama.trim() || m.ic.trim());
+                                return (
+                                  <div key={t.id} className="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200">
+                                    <span className="font-semibold text-slate-900">
+                                      {t.label}: {hasData ? m.nama : <span className="text-slate-400 font-normal italic">(Belum diisi)</span>}
+                                    </span>
+                                    <span className="text-[11px] text-slate-500 font-mono">
+                                      {hasData ? m.ic : "-"}
+                                    </span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
 
-                    <div className="flex gap-3 pt-2">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setFormStep("form");
-                          setErrorMessage("");
-                        }}
-                        className="flex-1 py-3.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5"
-                      >
-                        <ArrowLeft className="h-4 w-4" />
-                        Kembali
-                      </button>
-                      <button
-                        type="submit"
-                        disabled={!declarationAgreed || formStatus === "loading"}
-                        className="flex-[2] py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                        style={{ background: "var(--color-brand-green)" }}
-                      >
-                        {formStatus === "loading" ? (
+                          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                            <p>
+                              Saya (dan keluarga saya jika pakej keluarga / jika ada tambahan) dengan ini mengemukakan permohonan untuk mendaftar sebagai ahli Skim Khairat Kohasil Raudhah. Saya juga memperakui semua maklumat yang diberikan adalah benar dan saya juga telah membaca dan memahami serta bersetuju untuk mematuhi semua terma dan syarat Skim Khairat ini. Saya dengan fikiran waras dan tanpa paksaan mana – mana pihak dengan ini bersetuju untuk menyertai Skim Khairat ini dengan jumlah potongan gaji bulanan sebanyak <strong className="text-green-950 font-extrabold text-sm sm:text-base border-b-2 border-green-800">RM{getCalculatedMonthlyFee() + (warisData.statusKeahlian === "bukan_ahli" ? 1 : 0)}</strong> sebulan.
+                            </p>
+                          </div>
+
+                          {/* Red Color Font Notice Box */}
+                          <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-xs sm:text-sm text-red-700 space-y-2">
+                            {selectedFormPackage.category === "individu" && (
+                              <p className="font-bold text-amber-900 leading-snug pb-1 border-b border-amber-200">
+                                Nota Pakej Individu: Setiap tambahan 1 orang tanggungan dikenakan caj RM10/sebulan (Maksimum 5 orang). Jumlah tanggungan semasa: {individuDependents.length} orang (+RM{individuDependents.length * 10}/sebulan).
+                              </p>
+                            )}
+                            <p className="font-bold text-red-800 leading-snug">
+                              Penting : Untuk Bukan Ahli Kohasil, Caj Tambahan sebanyak RM1 akan dikenakan untuk setiap potongan gaji bulanan. Contoh Pakej Keluarga 20 + Ibu Individu 10 : Potongan Bulanan adalah RM30 + RM1 = RM31 sebulan
+                            </p>
+                            <p className="font-semibold text-red-700 leading-snug">
+                              Jika pakej keluarga , Sila hubungi kami untuk menambah nama anak jika mendapat anak baharu (apabila berumur 1 tahun) bagi memenuhi kuota pakej keluarga tersebut.Tertakluk kepada kategori pakej keluarga
+                            </p>
+                          </div>
+
+                          {/* Final Declaration Submission Form */}
+                          <form onSubmit={handleFormSubmit} className="space-y-4 pt-2">
+                            <label className="flex items-start gap-3 cursor-pointer p-3.5 rounded-2xl bg-emerald-50/80 border border-emerald-200 hover:bg-emerald-100/60 transition-colors">
+                              <input
+                                type="checkbox"
+                                checked={declarationAgreed}
+                                onChange={(e) => setDeclarationAgreed(e.target.checked)}
+                                className="mt-0.5 h-4 w-4 rounded accent-green-800 cursor-pointer flex-shrink-0"
+                              />
+                              <span className="text-xs sm:text-sm font-bold text-green-950">
+                                * Dengan klik “Saya Setuju”, saya bersetuju dengan terma dan syarat yang dinyatakan di atas
+                              </span>
+                            </label>
+
+                            {errorMessage && (
+                              <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
+                                {errorMessage}
+                              </div>
+                            )}
+
+                            <div className="flex gap-3 pt-2">
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setFormStep("form");
+                                  setErrorMessage("");
+                                }}
+                                className="flex-1 py-3.5 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors flex items-center justify-center gap-1.5"
+                              >
+                                <ArrowLeft className="h-4 w-4" />
+                                Kembali
+                              </button>
+                              <button
+                                type="submit"
+                                disabled={!declarationAgreed || formStatus === "loading"}
+                                className="flex-[2] py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                style={{ background: "var(--color-brand-green)" }}
+                              >
+                                {formStatus === "loading" ? (
+                                  <>
+                                    <Loader2 className="h-4 w-4 animate-spin" />
+                                    Menghantar...
+                                  </>
+                                ) : (
+                                  <>
+                                    <Send className="h-4 w-4" />
+                                    Hantar Permohonan
+                                  </>
+                                )}
+                              </button>
+                            </div>
+                          </form>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <form onSubmit={handleProceedToDeclaration} className="space-y-4">
+                        {/* Multi-member Tab Navigation Bar */}
+                        <div className="mb-2">
+                          <div className="flex items-center gap-1.5 overflow-x-auto pb-2 border-b border-slate-200 no-scrollbar">
+                            {memberTabs.map((tab) => {
+                              const isActive = activeMemberTab === tab.id;
+                              const mData = membersData[tab.id];
+                              const isFilled = Boolean(mData && mData.nama.trim() && mData.ic.trim());
+                              const isDynamicDep = tab.id.startsWith("tanggungan_");
+
+                              return (
+                                <div key={tab.id} className="relative flex items-center">
+                                  <button
+                                    type="button"
+                                    onClick={() => setActiveMemberTab(tab.id)}
+                                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${isActive
+                                      ? "bg-green-800 text-white shadow-xs"
+                                      : isFilled
+                                        ? "bg-emerald-50 text-emerald-800 border border-emerald-300"
+                                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                                      }`}
+                                  >
+                                    <span>{tab.label}</span>
+                                    {isFilled && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
+                                  </button>
+                                  {isDynamicDep && (
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleRemoveIndividuDependent(tab.id);
+                                      }}
+                                      className="ml-1 p-1 rounded-full text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
+                                      title="Buang tanggungan ini"
+                                    >
+                                      <X className="w-3.5 h-3.5" />
+                                    </button>
+                                  )}
+                                </div>
+                              );
+                            })}
+
+                            {/* (+) Tambah Tanggungan Button for Individu Package */}
+                            {selectedFormPackage.category === "individu" && (
+                              <button
+                                type="button"
+                                onClick={handleAddIndividuDependent}
+                                disabled={individuDependents.length >= 5}
+                                className="px-3 py-1.5 rounded-xl text-xs font-extrabold bg-amber-400 text-green-950 hover:bg-amber-300 transition-all flex items-center gap-1 cursor-pointer whitespace-nowrap shadow-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                                title="Tambah tanggungan (Maksimum 5 orang - RM10/sebulan per tanggungan)"
+                              >
+                                <span>+ Tambah Tanggungan (+RM10)</span>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs font-extrabold uppercase tracking-wider text-green-900">
+                            {currentTabObj.description || currentTabObj.label}
+                          </span>
+                          {memberTabs.length > 1 && (
+                            <span className="text-[11px] font-semibold text-slate-500">
+                              Tab {memberTabs.findIndex((t) => t.id === activeMemberTab) + 1} / {memberTabs.length}
+                            </span>
+                          )}
+                        </div>
+
+                        {errorMessage && (
+                          <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
+                            {errorMessage}
+                          </div>
+                        )}
+
+                        {/* Nama Penuh */}
+                        <div>
+                          <label htmlFor={`modal-nama-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                            Nama Penuh {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                          </label>
+                          <input
+                            id={`modal-nama-${activeMemberTab}`}
+                            type="text"
+                            required={activeMemberTab === "ahli"}
+                            value={currentMemberData.nama}
+                            onChange={(e) => handleMemberFieldChange(activeMemberTab, "nama", e.target.value)}
+                            placeholder={`Contoh: ${activeMemberTab === "ahli" ? "Ahmad bin Abdullah" : activeMemberTab === "pasangan" ? "Siti binti Ali" : "Ali bin Ahmad"}`}
+                            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
+                          />
+                        </div>
+
+                        {/* Grid: No Telefon & IC */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div>
+                            <label htmlFor={`modal-telefon-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                              No Telefon {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                            </label>
+                            <input
+                              id={`modal-telefon-${activeMemberTab}`}
+                              type="tel"
+                              required={activeMemberTab === "ahli"}
+                              value={currentMemberData.telefon}
+                              onChange={(e) => handleMemberFieldChange(activeMemberTab, "telefon", e.target.value)}
+                              placeholder="Contoh: 011-1300 1999"
+                              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
+                            />
+                          </div>
+
+                          <div>
+                            <label htmlFor={`modal-ic-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                              Nombor Kad Pengenalan {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                            </label>
+                            <input
+                              id={`modal-ic-${activeMemberTab}`}
+                              type="text"
+                              required={activeMemberTab === "ahli"}
+                              value={currentMemberData.ic}
+                              onChange={(e) => handleMemberFieldChange(activeMemberTab, "ic", e.target.value)}
+                              placeholder="Contoh: 900101141234"
+                              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Checkbox for Sama Seperti Ahli on non-ahli tabs */}
+                        {activeMemberTab !== "ahli" && (
+                          <div className="p-3 rounded-2xl bg-emerald-50/90 border border-emerald-200">
+                            <label className="flex items-center gap-2.5 cursor-pointer text-xs font-bold text-emerald-950">
+                              <input
+                                type="checkbox"
+                                checked={currentMemberData.sameAddressAsAhli || false}
+                                onChange={(e) => handleToggleSameAddress(activeMemberTab, e.target.checked)}
+                                className="h-4 w-4 rounded accent-green-800 cursor-pointer"
+                              />
+                              <span>Sama seperti alamat Ahli</span>
+                            </label>
+                            {currentMemberData.sameAddressAsAhli && (
+                              <p className="text-[11px] text-emerald-700 mt-1 italic pl-6">
+                                * Alamat disalin secara automatik daripada borang Ahli.
+                              </p>
+                            )}
+                          </div>
+                        )}
+
+                        {/* Alamat 1 */}
+                        <div>
+                          <label htmlFor={`modal-alamat1-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                            Alamat 1 {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                          </label>
+                          <input
+                            id={`modal-alamat1-${activeMemberTab}`}
+                            type="text"
+                            required={activeMemberTab === "ahli"}
+                            disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
+                            value={currentMemberData.alamat1}
+                            onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat1", e.target.value)}
+                            placeholder="No. Rumah, Jalan, Taman"
+                            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
+                          />
+                        </div>
+
+                        {/* Grid: Alamat 2 & Alamat 3 & Negeri */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div>
+                            <label htmlFor={`modal-alamat2-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                              Alamat 2 (poskod) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                            </label>
+                            <input
+                              id={`modal-alamat2-${activeMemberTab}`}
+                              type="text"
+                              required={activeMemberTab === "ahli"}
+                              disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
+                              value={currentMemberData.alamat2}
+                              onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat2", e.target.value)}
+                              placeholder="Contoh: 50600"
+                              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
+                            />
+                          </div>
+
+                          <div>
+                            <label htmlFor={`modal-alamat3-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                              Alamat 3 (bandar) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                            </label>
+                            <input
+                              id={`modal-alamat3-${activeMemberTab}`}
+                              type="text"
+                              required={activeMemberTab === "ahli"}
+                              disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
+                              value={currentMemberData.alamat3}
+                              onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat3", e.target.value)}
+                              placeholder="Contoh: Kuala Lumpur"
+                              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
+                            />
+                          </div>
+
+                          <div className="sm:col-span-2">
+                            <label htmlFor={`modal-negeri-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                              Alamat 3 (Negeri) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
+                            </label>
+                            <select
+                              id={`modal-negeri-${activeMemberTab}`}
+                              required={activeMemberTab === "ahli"}
+                              disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
+                              value={currentMemberData.negeri}
+                              onChange={(e) => handleMemberFieldChange(activeMemberTab, "negeri", e.target.value)}
+                              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 bg-white disabled:bg-slate-100 disabled:text-slate-500"
+                            >
+                              <option value="">-- Pilih Negeri --</option>
+                              {MALAYSIAN_STATES.map((state) => (
+                                <option key={state} value={state}>
+                                  {state}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
+                        </div>
+
+                        {/* Waris & Status Keahlian (only on Ahli tab) */}
+                        {activeMemberTab === "ahli" && (
                           <>
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                            Menghantar...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="h-4 w-4" />
-                            Hantar Permohonan
+                            <div className="pt-2 border-t border-slate-200">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                  <label htmlFor="modal-namaWaris" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                                    Nama Waris <span className="text-red-500">*</span>
+                                  </label>
+                                  <input
+                                    id="modal-namaWaris"
+                                    type="text"
+                                    required
+                                    value={warisData.namaWaris}
+                                    onChange={(e) => setWarisData({ ...warisData, namaWaris: e.target.value })}
+                                    placeholder="Nama Penuh Waris"
+                                    className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
+                                  />
+                                </div>
+
+                                <div>
+                                  <label htmlFor="modal-telefonWaris" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                                    No Tel Waris <span className="text-red-500">*</span>
+                                  </label>
+                                  <input
+                                    id="modal-telefonWaris"
+                                    type="tel"
+                                    required
+                                    value={warisData.telefonWaris}
+                                    onChange={(e) => setWarisData({ ...warisData, telefonWaris: e.target.value })}
+                                    placeholder="Contoh: 012-3456789"
+                                    className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="pt-2 border-t border-slate-200">
+                              <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                                Ahli / Bukan Ahli <span className="text-red-500">*</span>
+                              </label>
+                              <div className="grid grid-cols-2 gap-3">
+                                <label className={`flex items-center justify-center gap-2 p-2.5 rounded-xl border cursor-pointer text-xs font-semibold transition-all ${warisData.statusKeahlian === "ahli" ? "border-green-800 bg-green-50 text-green-900" : "border-slate-200 text-slate-600"}`}>
+                                  <input
+                                    type="radio"
+                                    name="statusKeahlian"
+                                    value="ahli"
+                                    checked={warisData.statusKeahlian === "ahli"}
+                                    onChange={() => setWarisData({ ...warisData, statusKeahlian: "ahli" })}
+                                    className="accent-green-800"
+                                  />
+                                  Ahli
+                                </label>
+                                <label className={`flex items-center justify-center gap-2 p-2.5 rounded-xl border cursor-pointer text-xs font-semibold transition-all ${warisData.statusKeahlian === "bukan_ahli" ? "border-green-800 bg-green-50 text-green-900" : "border-slate-200 text-slate-600"}`}>
+                                  <input
+                                    type="radio"
+                                    name="statusKeahlian"
+                                    value="bukan_ahli"
+                                    checked={warisData.statusKeahlian === "bukan_ahli"}
+                                    onChange={() => setWarisData({ ...warisData, statusKeahlian: "bukan_ahli" })}
+                                    className="accent-green-800"
+                                  />
+                                  Bukan Ahli
+                                </label>
+                              </div>
+                            </div>
                           </>
                         )}
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              );
-            }
 
-            return (
-              <form onSubmit={handleProceedToDeclaration} className="space-y-4">
-                {/* Multi-member Tab Navigation Bar */}
-                <div className="mb-2">
-                  <div className="flex items-center gap-1.5 overflow-x-auto pb-2 border-b border-slate-200 no-scrollbar">
-                    {memberTabs.map((tab) => {
-                      const isActive = activeMemberTab === tab.id;
-                      const mData = membersData[tab.id];
-                      const isFilled = Boolean(mData && mData.nama.trim() && mData.ic.trim());
-                      const isDynamicDep = tab.id.startsWith("tanggungan_");
+                        {/* Tab Navigation Footer */}
+                        <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-200">
+                          {memberTabs.length > 1 ? (
+                            <>
+                              {memberTabs.findIndex((t) => t.id === activeMemberTab) > 0 ? (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const idx = memberTabs.findIndex((t) => t.id === activeMemberTab);
+                                    if (idx > 0) setActiveMemberTab(memberTabs[idx - 1].id);
+                                  }}
+                                  className="px-3.5 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors"
+                                >
+                                  &larr; {memberTabs[memberTabs.findIndex((t) => t.id === activeMemberTab) - 1]?.label}
+                                </button>
+                              ) : <div />}
 
-                      return (
-                        <div key={tab.id} className="relative flex items-center">
-                          <button
-                            type="button"
-                            onClick={() => setActiveMemberTab(tab.id)}
-                            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 cursor-pointer ${isActive
-                                ? "bg-green-800 text-white shadow-xs"
-                                : isFilled
-                                  ? "bg-emerald-50 text-emerald-800 border border-emerald-300"
-                                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                              }`}
-                          >
-                            <span>{tab.label}</span>
-                            {isFilled && <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />}
-                          </button>
-                          {isDynamicDep && (
+                              {memberTabs.findIndex((t) => t.id === activeMemberTab) < memberTabs.length - 1 ? (
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    const idx = memberTabs.findIndex((t) => t.id === activeMemberTab);
+                                    if (idx < memberTabs.length - 1) setActiveMemberTab(memberTabs[idx + 1].id);
+                                  }}
+                                  className="px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors"
+                                >
+                                  Isi {memberTabs[memberTabs.findIndex((t) => t.id === activeMemberTab) + 1]?.label} &rarr;
+                                </button>
+                              ) : (
+                                <button
+                                  type="submit"
+                                  className="py-3 px-5 rounded-xl text-xs sm:text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 flex items-center justify-center gap-2"
+                                  style={{ background: "var(--color-brand-green)" }}
+                                >
+                                  Teruskan ke Pengisytiharan &rarr;
+                                </button>
+                              )}
+                            </>
+                          ) : (
                             <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleRemoveIndividuDependent(tab.id);
-                              }}
-                              className="ml-1 p-1 rounded-full text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
-                              title="Buang tanggungan ini"
+                              type="submit"
+                              className="w-full py-3.5 rounded-xl text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 flex items-center justify-center gap-2"
+                              style={{ background: "var(--color-brand-green)" }}
                             >
-                              <X className="w-3.5 h-3.5" />
+                              Teruskan ke Pengisytiharan &rarr;
                             </button>
                           )}
                         </div>
-                      );
-                    })}
-
-                    {/* (+) Tambah Tanggungan Button for Individu Package */}
-                    {selectedFormPackage.category === "individu" && (
-                      <button
-                        type="button"
-                        onClick={handleAddIndividuDependent}
-                        disabled={individuDependents.length >= 5}
-                        className="px-3 py-1.5 rounded-xl text-xs font-extrabold bg-amber-400 text-green-950 hover:bg-amber-300 transition-all flex items-center gap-1 cursor-pointer whitespace-nowrap shadow-xs disabled:opacity-50 disabled:cursor-not-allowed"
-                        title="Tambah tanggungan (Maksimum 5 orang - RM10/sebulan per tanggungan)"
-                      >
-                        <span>+ Tambah Tanggungan (+RM10)</span>
-                      </button>
-                    )}
-                  </div>
+                      </form>
+                    );
+                  })()}
                 </div>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-green-900">
-                    {currentTabObj.description || currentTabObj.label}
-                  </span>
-                  {memberTabs.length > 1 && (
-                    <span className="text-[11px] font-semibold text-slate-500">
-                      Tab {memberTabs.findIndex((t) => t.id === activeMemberTab) + 1} / {memberTabs.length}
-                    </span>
-                  )}
-                </div>
-
-                {errorMessage && (
-                  <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs font-medium text-red-700">
-                    {errorMessage}
-                  </div>
-                )}
-
-                {/* Nama Penuh */}
-                <div>
-                  <label htmlFor={`modal-nama-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                    Nama Penuh {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                  </label>
-                  <input
-                    id={`modal-nama-${activeMemberTab}`}
-                    type="text"
-                    required={activeMemberTab === "ahli"}
-                    value={currentMemberData.nama}
-                    onChange={(e) => handleMemberFieldChange(activeMemberTab, "nama", e.target.value)}
-                    placeholder={`Contoh: ${activeMemberTab === "ahli" ? "Ahmad bin Abdullah" : activeMemberTab === "pasangan" ? "Siti binti Ali" : "Ali bin Ahmad"}`}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
-                  />
-                </div>
-
-                {/* Grid: No Telefon & IC */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label htmlFor={`modal-telefon-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      No Telefon {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                    </label>
-                    <input
-                      id={`modal-telefon-${activeMemberTab}`}
-                      type="tel"
-                      required={activeMemberTab === "ahli"}
-                      value={currentMemberData.telefon}
-                      onChange={(e) => handleMemberFieldChange(activeMemberTab, "telefon", e.target.value)}
-                      placeholder="Contoh: 011-1300 1999"
-                      className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor={`modal-ic-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      Nombor Kad Pengenalan / MyKad / MyKid {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                    </label>
-                    <input
-                      id={`modal-ic-${activeMemberTab}`}
-                      type="text"
-                      required={activeMemberTab === "ahli"}
-                      value={currentMemberData.ic}
-                      onChange={(e) => handleMemberFieldChange(activeMemberTab, "ic", e.target.value)}
-                      placeholder="Contoh: 900101-14-1234"
-                      className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
-                    />
-                  </div>
-                </div>
-
-                {/* Checkbox for Sama Seperti Ahli on non-ahli tabs */}
-                {activeMemberTab !== "ahli" && (
-                  <div className="p-3 rounded-2xl bg-emerald-50/90 border border-emerald-200">
-                    <label className="flex items-center gap-2.5 cursor-pointer text-xs font-bold text-emerald-950">
-                      <input
-                        type="checkbox"
-                        checked={currentMemberData.sameAddressAsAhli || false}
-                        onChange={(e) => handleToggleSameAddress(activeMemberTab, e.target.checked)}
-                        className="h-4 w-4 rounded accent-green-800 cursor-pointer"
-                      />
-                      <span>Sama seperti alamat Ahli</span>
-                    </label>
-                    {currentMemberData.sameAddressAsAhli && (
-                      <p className="text-[11px] text-emerald-700 mt-1 italic pl-6">
-                        * Alamat disalin secara automatik daripada borang Ahli.
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {/* Alamat 1 */}
-                <div>
-                  <label htmlFor={`modal-alamat1-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                    Alamat 1 {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                  </label>
-                  <input
-                    id={`modal-alamat1-${activeMemberTab}`}
-                    type="text"
-                    required={activeMemberTab === "ahli"}
-                    disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
-                    value={currentMemberData.alamat1}
-                    onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat1", e.target.value)}
-                    placeholder="No. Rumah, Jalan, Taman"
-                    className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
-                  />
-                </div>
-
-                {/* Grid: Alamat 2 & Alamat 3 & Negeri */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <div>
-                    <label htmlFor={`modal-alamat2-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      Alamat 2 (poskod) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                    </label>
-                    <input
-                      id={`modal-alamat2-${activeMemberTab}`}
-                      type="text"
-                      required={activeMemberTab === "ahli"}
-                      disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
-                      value={currentMemberData.alamat2}
-                      onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat2", e.target.value)}
-                      placeholder="Contoh: 50600"
-                      className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor={`modal-alamat3-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      Alamat 3 (bandar) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                    </label>
-                    <input
-                      id={`modal-alamat3-${activeMemberTab}`}
-                      type="text"
-                      required={activeMemberTab === "ahli"}
-                      disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
-                      value={currentMemberData.alamat3}
-                      onChange={(e) => handleMemberFieldChange(activeMemberTab, "alamat3", e.target.value)}
-                      placeholder="Contoh: Kuala Lumpur"
-                      className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 disabled:bg-slate-100 disabled:text-slate-500"
-                    />
-                  </div>
-
-                  <div className="sm:col-span-2">
-                    <label htmlFor={`modal-negeri-${activeMemberTab}`} className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                      Alamat 3 (Negeri) {activeMemberTab === "ahli" && <span className="text-red-500">*</span>}
-                    </label>
-                    <select
-                      id={`modal-negeri-${activeMemberTab}`}
-                      required={activeMemberTab === "ahli"}
-                      disabled={activeMemberTab !== "ahli" && currentMemberData.sameAddressAsAhli}
-                      value={currentMemberData.negeri}
-                      onChange={(e) => handleMemberFieldChange(activeMemberTab, "negeri", e.target.value)}
-                      className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800 bg-white disabled:bg-slate-100 disabled:text-slate-500"
-                    >
-                      <option value="">-- Pilih Negeri --</option>
-                      {MALAYSIAN_STATES.map((state) => (
-                        <option key={state} value={state}>
-                          {state}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                {/* Waris & Status Keahlian (only on Ahli tab) */}
-                {activeMemberTab === "ahli" && (
-                  <>
-                    <div className="pt-2 border-t border-slate-200">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                          <label htmlFor="modal-namaWaris" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                            Nama Waris <span className="text-red-500">*</span>
-                          </label>
-                          <input
-                            id="modal-namaWaris"
-                            type="text"
-                            required
-                            value={warisData.namaWaris}
-                            onChange={(e) => setWarisData({ ...warisData, namaWaris: e.target.value })}
-                            placeholder="Nama Penuh Waris"
-                            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
-                          />
-                        </div>
-
-                        <div>
-                          <label htmlFor="modal-telefonWaris" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                            No Tel Waris <span className="text-red-500">*</span>
-                          </label>
-                          <input
-                            id="modal-telefonWaris"
-                            type="tel"
-                            required
-                            value={warisData.telefonWaris}
-                            onChange={(e) => setWarisData({ ...warisData, telefonWaris: e.target.value })}
-                            placeholder="Contoh: 012-3456789"
-                            className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm outline-none focus:border-green-800 focus:ring-2 focus:ring-green-800/20 transition-all text-slate-800"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="pt-2 border-t border-slate-200">
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                        Ahli / Bukan Ahli <span className="text-red-500">*</span>
-                      </label>
-                      <div className="grid grid-cols-2 gap-3">
-                        <label className={`flex items-center justify-center gap-2 p-2.5 rounded-xl border cursor-pointer text-xs font-semibold transition-all ${warisData.statusKeahlian === "ahli" ? "border-green-800 bg-green-50 text-green-900" : "border-slate-200 text-slate-600"}`}>
-                          <input
-                            type="radio"
-                            name="statusKeahlian"
-                            value="ahli"
-                            checked={warisData.statusKeahlian === "ahli"}
-                            onChange={() => setWarisData({ ...warisData, statusKeahlian: "ahli" })}
-                            className="accent-green-800"
-                          />
-                          Ahli
-                        </label>
-                        <label className={`flex items-center justify-center gap-2 p-2.5 rounded-xl border cursor-pointer text-xs font-semibold transition-all ${warisData.statusKeahlian === "bukan_ahli" ? "border-green-800 bg-green-50 text-green-900" : "border-slate-200 text-slate-600"}`}>
-                          <input
-                            type="radio"
-                            name="statusKeahlian"
-                            value="bukan_ahli"
-                            checked={warisData.statusKeahlian === "bukan_ahli"}
-                            onChange={() => setWarisData({ ...warisData, statusKeahlian: "bukan_ahli" })}
-                            className="accent-green-800"
-                          />
-                          Bukan Ahli
-                        </label>
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {/* Tab Navigation Footer */}
-                <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-200">
-                  {memberTabs.length > 1 ? (
-                    <>
-                      {memberTabs.findIndex((t) => t.id === activeMemberTab) > 0 ? (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            const idx = memberTabs.findIndex((t) => t.id === activeMemberTab);
-                            if (idx > 0) setActiveMemberTab(memberTabs[idx - 1].id);
-                          }}
-                          className="px-3.5 py-2.5 rounded-xl text-xs font-semibold border border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors"
-                        >
-                          &larr; {memberTabs[memberTabs.findIndex((t) => t.id === activeMemberTab) - 1]?.label}
-                        </button>
-                      ) : <div />}
-
-                      {memberTabs.findIndex((t) => t.id === activeMemberTab) < memberTabs.length - 1 ? (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            const idx = memberTabs.findIndex((t) => t.id === activeMemberTab);
-                            if (idx < memberTabs.length - 1) setActiveMemberTab(memberTabs[idx + 1].id);
-                          }}
-                          className="px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition-colors"
-                        >
-                          Isi {memberTabs[memberTabs.findIndex((t) => t.id === activeMemberTab) + 1]?.label} &rarr;
-                        </button>
-                      ) : (
-                        <button
-                          type="submit"
-                          className="py-3 px-5 rounded-xl text-xs sm:text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 flex items-center justify-center gap-2"
-                          style={{ background: "var(--color-brand-green)" }}
-                        >
-                          Teruskan ke Pengisytiharan &rarr;
-                        </button>
-                      )}
-                    </>
-                  ) : (
-                    <button
-                      type="submit"
-                      className="w-full py-3.5 rounded-xl text-sm font-bold text-white shadow-lg transition-all hover:opacity-95 flex items-center justify-center gap-2"
-                      style={{ background: "var(--color-brand-green)" }}
-                    >
-                      Teruskan ke Pengisytiharan &rarr;
-                    </button>
-                  )}
-                </div>
-              </form>
-            );
-          })()}
-        </div>
-      </motion.div>
-    </div>
-  )
-}
+              </motion.div>
+            </div>
+          )
+        }
       </AnimatePresence >
     </section >
   );
