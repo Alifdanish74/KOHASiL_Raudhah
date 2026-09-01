@@ -198,7 +198,7 @@ export function FaqSection() {
         </motion.div>
 
         {/* Note about verification flags */}
-        <div
+        {/* <div
           className="mx-auto mt-8 max-w-3xl flex items-start gap-2 rounded-xl px-5 py-4"
           style={{
             background: "rgba(191,168,0,0.06)",
@@ -213,7 +213,7 @@ export function FaqSection() {
           <p className="text-xs leading-relaxed" style={{ color: "var(--color-brand-text-muted)" }}>
             <strong style={{ color: "var(--color-brand-text)" }}>Nota kepada Kohasil:</strong> Soalan bertanda &ldquo;Perlu sahkan&rdquo; memerlukan pengesahan fakta oleh pihak Kohasil sebelum penerbitan laman sesawang ini.
           </p>
-        </div>
+        </div> */}
       </ResponsiveContainer>
     </section>
   );
