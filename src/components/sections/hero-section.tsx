@@ -26,7 +26,7 @@ export function HeroSection() {
       className="hero-bg relative min-h-[92dvh] overflow-hidden flex items-center justify-center py-24 lg:py-20"
       style={
         {
-          "--hero-bg-image": "url('/images/opening_background_desktop.png')",
+          "--hero-bg-image": "url('/images/opening_background.png')",
         } as React.CSSProperties
       }
     >
@@ -38,11 +38,6 @@ export function HeroSection() {
         @media (min-width: 640px) {
           .hero-dome-card {
             border-radius: 60% 60% 2.25rem 2.25rem / 35% 35% 2.25rem 2.25rem;
-          }
-        }
-        @media (max-width: 639px) {
-          .hero-bg::before {
-            background-image: url('/images/opening_background.png') !important;
           }
         }
       `}</style>

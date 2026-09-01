@@ -74,23 +74,18 @@ export function OpeningCover() {
           aria-modal="true"
           aria-label="Selamat datang ke KOHASiL Raudhah"
         >
-          {/* Responsive background: mobile portrait vs desktop landscape */}
-          <picture className="absolute inset-0 z-0">
+          {/* Full screen background image for mobile portrait vs desktop landscape */}
+          <picture className="absolute inset-0 z-0 h-full w-full">
             {/* Desktop: landscape image */}
             <source
-              media="(min-width: 1024px)"
-              srcSet="/images/opening_background_desktop.png"
-            />
-            {/* Tablet: desktop image works fine */}
-            <source
-              media="(min-width: 640px)"
+              media="(min-width: 768px)"
               srcSet="/images/opening_background_desktop.png"
             />
             {/* Mobile default: portrait image */}
             <img
               src="/images/opening_background.png"
               alt=""
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-center"
               aria-hidden="true"
             />
           </picture>
@@ -102,29 +97,19 @@ export function OpeningCover() {
             aria-hidden="true"
           />
 
-          {/* Central Card — glassmorphism container, arch shape removed */}
-          <div className="relative z-10 flex w-full max-w-[340px] sm:max-w-md flex-col items-center px-3 sm:px-4 text-center">
-            {/* <div
-              className="w-full rounded-3xl px-6 py-8 sm:px-8 sm:py-10 flex flex-col items-center"
-              style={{
-                border: "1.5px solid var(--color-brand-gold)",
-                background: "rgba(255, 255, 255, 0.85)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-                boxShadow: "0 16px 48px rgba(156,4,9,0.12)",
-              }}
-            > */}
+          {/* Central Content — proportioned to sit strictly inside the arc frame of the background */}
+          <div className="relative z-10 flex w-full max-w-[300px] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[400px] flex-col items-center px-3 sm:px-4 text-center my-auto">
             {/* KOHASiL Official Logo Badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-3 sm:mb-5 rounded-xl sm:rounded-2xl bg-white p-2.5 sm:p-3 shadow-md border border-slate-100 flex items-center justify-center"
+              className="mb-2 sm:mb-3 lg:mb-4 rounded-xl sm:rounded-2xl bg-white p-2 sm:p-2.5 shadow-md border border-slate-100 flex items-center justify-center"
             >
               <img
                 src="/images/kohasil_logo.jpg"
                 alt="Logo KOHASiL"
-                className="h-10 sm:h-16 w-auto object-contain"
+                className="h-8 sm:h-11 lg:h-14 w-auto object-contain"
               />
             </motion.div>
 
@@ -133,8 +118,8 @@ export function OpeningCover() {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="eyebrow-cinzel mb-1 sm:mb-2 text-[10px] sm:text-xs"
-              style={{ color: "var(--color-brand-text)", letterSpacing: "0.2em" }}
+              className="eyebrow-cinzel mb-0.5 sm:mb-1 text-[9px] sm:text-[10px] lg:text-xs"
+              style={{ color: "var(--color-brand-text)", letterSpacing: "0.18em" }}
             >
               {BRAND.product}
             </motion.p>
@@ -144,9 +129,9 @@ export function OpeningCover() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-1.5 sm:mb-2 font-bold italic"
+              className="mb-1 sm:mb-1.5 font-bold italic"
               style={{
-                fontSize: "clamp(1.5rem, 5.5vw, 3.25rem)",
+                fontSize: "clamp(1.25rem, 3.5vw, 2.25rem)",
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-green-dark)",
                 lineHeight: 1.1,
@@ -157,7 +142,7 @@ export function OpeningCover() {
 
             {/* Gold Line Accent */}
             <div
-              className="my-2 sm:my-3 h-0.5 w-12 sm:w-16 rounded-full"
+              className="my-1.5 sm:my-2 h-0.5 w-10 sm:w-14 rounded-full"
               style={{ background: "var(--color-brand-gold)", opacity: 0.7 }}
             />
 
@@ -166,7 +151,7 @@ export function OpeningCover() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-xs sm:text-base font-semibold italic leading-snug sm:leading-relaxed mb-3 sm:mb-6"
+              className="text-[11px] sm:text-xs lg:text-sm font-semibold italic leading-snug mb-2 sm:mb-4 sm:mb-5"
               style={{
                 color: "var(--color-brand-text)",
                 fontFamily: "var(--font-heading)",
@@ -180,26 +165,26 @@ export function OpeningCover() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="w-full flex flex-col items-center gap-2 sm:gap-3"
+              className="w-full flex flex-col items-center gap-1.5 sm:gap-2.5"
             >
               {/* Notice Button above Buka */}
               <motion.button
                 onClick={handleClick}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full flex flex-col items-center justify-center rounded-xl sm:rounded-2xl py-2 px-3 sm:py-3 sm:px-5 text-white border-2 sm:border-4 shadow-lg transition-all"
+                className="w-full flex flex-col items-center justify-center rounded-xl sm:rounded-2xl py-1.5 px-3 sm:py-2.5 sm:px-4 text-white border-2 shadow-md transition-all"
                 style={{
                   background: "#242FA4",
                   borderColor: "#F0F00E",
-                  boxShadow: "0 6px 20px rgba(10 75 155 / 0.4)",
+                  boxShadow: "0 4px 16px rgba(10 75 155 / 0.35)",
                   touchAction: "manipulation",
                 }}
                 type="button"
               >
-                <span className="text-[11px] xs:text-xs sm:text-base font-extrabold tracking-wide uppercase text-white leading-tight">
+                <span className="text-[10px] sm:text-xs lg:text-sm font-extrabold tracking-wide uppercase text-white leading-tight">
                   TERBUKA KEPADA BUKAN AHLI KOHASIL
                 </span>
-                <span className="text-[9px] xs:text-[10px] sm:text-xs font-bold tracking-wider uppercase mt-0.5 leading-tight" style={{ color: "#F0F00E" }}>
+                <span className="text-[8px] sm:text-[10px] lg:text-xs font-bold tracking-wider uppercase mt-0.5 leading-tight" style={{ color: "#F0F00E" }}>
                   SEMUA STAF LHDN DIJEMPUT MENYERTAI
                 </span>
               </motion.button>
@@ -208,28 +193,27 @@ export function OpeningCover() {
                 onClick={handleClick}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full py-2.5 px-5 sm:py-3.5 sm:px-6 text-sm sm:text-base font-bold shadow-lg transition-all"
+                className="flex w-full items-center justify-center gap-1.5 sm:gap-2 rounded-full py-2 px-4 sm:py-2.5 sm:px-5 text-xs sm:text-sm lg:text-base font-bold shadow-md transition-all"
                 style={{
                   background: "var(--color-brand-gold)",
                   color: "var(--color-brand-green-dark)",
-                  boxShadow: "0 6px 24px rgba(191,168,0,0.45)",
+                  boxShadow: "0 5px 20px rgba(191,168,0,0.4)",
                   touchAction: "manipulation",
                 }}
                 type="button"
                 aria-label="Buka penerangan KOHASiL Raudhah"
               >
                 Buka
-                <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 animate-bounce" aria-hidden="true" />
+                <ChevronDown className="h-3.5 w-3.5 sm:h-4 sm:w-4 lg:h-5 lg:w-5 animate-bounce" aria-hidden="true" />
               </motion.button>
 
               <p
-                className="text-[10px] sm:text-xs font-medium leading-relaxed"
+                className="text-[9px] sm:text-[11px] lg:text-xs font-medium leading-tight"
                 style={{ color: "var(--color-brand-text-muted)" }}
               >
                 Klik untuk terokai khidmat bantuan 24 jam.
               </p>
             </motion.div>
-            {/* </div> */}
           </div>
         </motion.div>
       )}

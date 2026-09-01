@@ -37,7 +37,7 @@ export function AssistanceProcessSection() {
         <SectionHeading
           eyebrow="Cara Kerja"
           title="Bagaimana Bantuan 24 Jam Berfungsi"
-          subtitle="Apabila berlaku kematian, hanya satu panggilan sudah mencukupi. Kami akan menguruskan selebihnya."
+          subtitle="Apabila berlaku kematian / kemalangan, hanya satu panggilan sudah mencukupi. Kami akan menguruskan selebihnya."
           className="mb-12"
         />
 

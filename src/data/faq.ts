@@ -42,7 +42,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "tuntutan-lewat",
     question: "Adakah tuntutan boleh dibuat jika pihak waris terlupa membuat tuntutan",
-    answer: "Ya, jika sekiranya kematian berlaku didalam tempoh keahlian dan tuntutan dibuat didalam masa 3 bulan dari tarikh kematian.",
+    answer: "Ya, jika sekiranya kematian / kemalangan berlaku didalam tempoh keahlian dan tuntutan dibuat didalam masa setahun dari tarikh kematian.",
     tooltipText: "Selepas tempoh 2 bulan kematian / kemalangan",
   }
 ];
