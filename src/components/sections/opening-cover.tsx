@@ -103,7 +103,7 @@ export function OpeningCover() {
           />
 
           {/* Central Card — glassmorphism container, arch shape removed */}
-          <div className="relative z-10 flex w-full max-w-sm flex-col items-center px-4 text-center sm:max-w-md">
+          <div className="relative z-10 flex w-full max-w-[340px] sm:max-w-md flex-col items-center px-3 sm:px-4 text-center">
             {/* <div
               className="w-full rounded-3xl px-6 py-8 sm:px-8 sm:py-10 flex flex-col items-center"
               style={{
@@ -119,12 +119,12 @@ export function OpeningCover() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-5 rounded-2xl bg-white p-3 shadow-md border border-slate-100 flex items-center justify-center"
+              className="mb-3 sm:mb-5 rounded-xl sm:rounded-2xl bg-white p-2.5 sm:p-3 shadow-md border border-slate-100 flex items-center justify-center"
             >
               <img
                 src="/images/kohasil_logo.jpg"
                 alt="Logo KOHASiL"
-                className="h-14 sm:h-16 w-auto object-contain"
+                className="h-10 sm:h-16 w-auto object-contain"
               />
             </motion.div>
 
@@ -133,7 +133,7 @@ export function OpeningCover() {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="eyebrow-cinzel mb-2"
+              className="eyebrow-cinzel mb-1 sm:mb-2 text-[10px] sm:text-xs"
               style={{ color: "var(--color-brand-text)", letterSpacing: "0.2em" }}
             >
               {BRAND.product}
@@ -144,9 +144,9 @@ export function OpeningCover() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-2 font-bold italic"
+              className="mb-1.5 sm:mb-2 font-bold italic"
               style={{
-                fontSize: "clamp(2.25rem, 7vw, 3.25rem)",
+                fontSize: "clamp(1.5rem, 5.5vw, 3.25rem)",
                 fontFamily: "var(--font-heading)",
                 color: "var(--color-brand-green-dark)",
                 lineHeight: 1.1,
@@ -157,7 +157,7 @@ export function OpeningCover() {
 
             {/* Gold Line Accent */}
             <div
-              className="my-3 h-0.5 w-16 rounded-full"
+              className="my-2 sm:my-3 h-0.5 w-12 sm:w-16 rounded-full"
               style={{ background: "var(--color-brand-gold)", opacity: 0.7 }}
             />
 
@@ -166,7 +166,7 @@ export function OpeningCover() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-sm sm:text-base font-semibold italic leading-relaxed mb-6"
+              className="text-xs sm:text-base font-semibold italic leading-snug sm:leading-relaxed mb-3 sm:mb-6"
               style={{
                 color: "var(--color-brand-text)",
                 fontFamily: "var(--font-heading)",
@@ -180,14 +180,14 @@ export function OpeningCover() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="w-full flex flex-col items-center gap-3"
+              className="w-full flex flex-col items-center gap-2 sm:gap-3"
             >
               {/* Notice Button above Buka */}
               <motion.button
                 onClick={handleClick}
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full flex flex-col items-center justify-center rounded-2xl py-3 px-5 text-white border-4 shadow-lg transition-all"
+                className="w-full flex flex-col items-center justify-center rounded-xl sm:rounded-2xl py-2 px-3 sm:py-3 sm:px-5 text-white border-2 sm:border-4 shadow-lg transition-all"
                 style={{
                   background: "#242FA4",
                   borderColor: "#F0F00E",
@@ -196,10 +196,10 @@ export function OpeningCover() {
                 }}
                 type="button"
               >
-                <span className="text-sm sm:text-base font-extrabold tracking-wide uppercase text-white">
+                <span className="text-[11px] xs:text-xs sm:text-base font-extrabold tracking-wide uppercase text-white leading-tight">
                   TERBUKA KEPADA BUKAN AHLI KOHASIL
                 </span>
-                <span className="text-xs font-bold tracking-wider uppercase mt-0.5" style={{ color: "#F0F00E" }}>
+                <span className="text-[9px] xs:text-[10px] sm:text-xs font-bold tracking-wider uppercase mt-0.5 leading-tight" style={{ color: "#F0F00E" }}>
                   SEMUA STAF LHDN DIJEMPUT MENYERTAI
                 </span>
               </motion.button>
@@ -208,7 +208,7 @@ export function OpeningCover() {
                 onClick={handleClick}
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
-                className="flex w-full items-center justify-center gap-2 rounded-full py-3.5 px-6 text-base font-bold shadow-lg transition-all"
+                className="flex w-full items-center justify-center gap-2 rounded-full py-2.5 px-5 sm:py-3.5 sm:px-6 text-sm sm:text-base font-bold shadow-lg transition-all"
                 style={{
                   background: "var(--color-brand-gold)",
                   color: "var(--color-brand-green-dark)",
@@ -219,11 +219,11 @@ export function OpeningCover() {
                 aria-label="Buka penerangan KOHASiL Raudhah"
               >
                 Buka
-                <ChevronDown className="h-5 w-5 animate-bounce" aria-hidden="true" />
+                <ChevronDown className="h-4 w-4 sm:h-5 sm:w-5 animate-bounce" aria-hidden="true" />
               </motion.button>
 
               <p
-                className="text-xs font-medium leading-relaxed"
+                className="text-[10px] sm:text-xs font-medium leading-relaxed"
                 style={{ color: "var(--color-brand-text-muted)" }}
               >
                 Klik untuk terokai khidmat bantuan 24 jam.

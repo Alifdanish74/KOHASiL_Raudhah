@@ -24,9 +24,9 @@ const syaratPenyertaan = [
 
 const syaratTuntutan = [
   "Semua kes kematian (biasa / kemalangan) hendaklah dilaporkan melalui talian Hotline 24 Jam: 011-1300 1999.",
-  "Segala tuntutan kematian tidak dapat dituntut jika terjadi akibat daripada perbuatan membunuh diri, mabuk, penyakit AIDS, dadah dan penglibatan dalam semua aktiviti yang menyalahi undang-undang.",
+  "Segala tuntutan kematian tidak dapat dituntut jika terjadi akibat daripada perbuatan membunuh diri, mabuk, dadah dan penglibatan dalam semua aktiviti yang menyalahi undang-undang.",
   "Salinan Permit pengebumian dan Kad Pengenalan si mati perlu dikemukakan kepada BJSB sebagai bukti sah kematian untuk tuntutan manfaat.",
-  "Bantuan Pengurusan Jenazah Lengkap (Muslim) akan diberikan mengikut lokasi (rumah / hospital) yang diminta waris.",
+  "Bantuan Pengurusan Jenazah Lengkap (Muslim) akan diberikan mengikut lokasi (rumah / hospital) yang diminta waris. \n \n - Untuk Non Muslim: Bantuan Tunai Kebajikan RM1500 akan diberikan kepada waris dalam tempoh 24 jam setelah laporan kematian diterima dan disahkan.",
   "Peruntukan wang khairat akan digunakan jika kos pengurusan jenazah melebihi RM1500 pada hari kejadian.",
   "Bantuan Tunai RM1500 akan diberikan dalam masa 24 jam jika waris memilih untuk menguruskan sendiri bersama keluarga / khairat tempatan.",
   "Laporan Hospital dan Laporan Polis perlu disertakan untuk tuntutan kematian / kecacatan kekal akibat kemalangan (semua tuntutan kemalangan tertakluk kelulusan pihak Takaful).",
@@ -100,7 +100,14 @@ export default function SyaratPage() {
                   >
                     {idx + 1}
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed font-medium">{item}</p>
+                  <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    {item.split(/<br\s*\/?>|\n/).map((line, lIdx, arr) => (
+                      <span key={lIdx}>
+                        {line}
+                        {lIdx < arr.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
                 </div>
               ))}
             </div>
@@ -148,7 +155,14 @@ export default function SyaratPage() {
                   >
                     {idx + 1}
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed font-medium">{item}</p>
+                  <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    {item.split(/<br\s*\/?>|\n/).map((line, lIdx, arr) => (
+                      <span key={lIdx}>
+                        {line}
+                        {lIdx < arr.length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
                 </div>
               ))}
             </div>
