@@ -214,7 +214,7 @@ export function OpeningCover() {
                 Klik untuk terokai khidmat bantuan 24 jam.
               </p>
             </motion.div>
-            {/* Notice Button above Buka */}
+            {/* Notice Button above Buka
             <motion.button
               onClick={handleClick}
               whileHover={{ scale: 1.03 }}
@@ -231,7 +231,13 @@ export function OpeningCover() {
               <span className="text-[10px] sm:text-xs lg:text-sm font-extrabold tracking-wide uppercase text-white leading-tight">
                 JUGA TERBUKA KEPADA NON-MUSLIM
               </span>
-            </motion.button>
+            </motion.button> */}
+            <p
+              className="text-[10px] sm:text-xs lg:text-sm font-extrabold py-2 leading-tight text-black-900"
+
+            >
+              JUGA TERBUKA KEPADA NON-MUSLIM
+            </p>
           </div>
         </motion.div>
       )}
