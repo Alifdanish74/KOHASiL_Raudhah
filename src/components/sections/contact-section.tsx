@@ -83,7 +83,7 @@ export function ContactSection({ preselectedPackage }: ContactSectionProps) {
             <SectionHeading
               eyebrow="Hubungi Kami"
               title="Kami Sedia Membantu Anda"
-              subtitle="Tinggalkan maklumat anda dan pegawai Kohasil akan menghubungi anda dalam masa terdekat."
+              subtitle="Untuk bantuan dan pertanyaan, sila hubungi kami"
               align="left"
               className="mb-8"
             />
@@ -98,13 +98,6 @@ export function ContactSection({ preselectedPackage }: ContactSectionProps) {
             >
               {[
                 {
-                  icon: Phone,
-                  label: "Hotline 24 Jam (BJSB)",
-                  value: BRAND.hotline,
-                  href: BRAND.hotlineTel,
-                  sublabel: "Bumijez Sdn Bhd - Bantuan kecemasan 24 jam",
-                },
-                {
                   icon: MessageCircle,
                   label: "WhatsApp 24 Jam",
                   value: BRAND.hotline_whatsapp,
@@ -112,10 +105,17 @@ export function ContactSection({ preselectedPackage }: ContactSectionProps) {
                   sublabel: "Talian perkhidmatan & sokongan",
                 },
                 {
+                  icon: Phone,
+                  label: "Hotline 24 Jam (BJSB)",
+                  value: BRAND.hotline,
+                  href: BRAND.hotlineTel,
+                  sublabel: "Bumijez Sdn Bhd - Bantuan kecemasan 24 jam",
+                },
+                {
                   icon: Mail,
-                  label: "E-mel Kohasil",
-                  value: "kohasil@gmail.com",
-                  href: "mailto:kohasil@gmail.com",
+                  label: "E-mel BJSB",
+                  value: "bjsbinfo@bumijez",
+                  href: "mailto:bjsbinfo@bumijez",
                   sublabel: "Pertanyaan am & keahlian",
                 },
               ].map(({ icon: Icon, label, value, href, sublabel }) => (

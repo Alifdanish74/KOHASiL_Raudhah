@@ -214,6 +214,24 @@ export function OpeningCover() {
                 Klik untuk terokai khidmat bantuan 24 jam.
               </p>
             </motion.div>
+            {/* Notice Button above Buka */}
+            <motion.button
+              onClick={handleClick}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full flex flex-col my-2 items-center justify-center rounded-xl sm:rounded-2xl py-1.5 px-3 sm:py-2.5 sm:px-4 text-white border-2 shadow-md transition-all"
+              style={{
+                background: "#242FA4",
+                borderColor: "#F0F00E",
+                boxShadow: "0 4px 16px rgba(10 75 155 / 0.35)",
+                touchAction: "manipulation",
+              }}
+              type="button"
+            >
+              <span className="text-[10px] sm:text-xs lg:text-sm font-extrabold tracking-wide uppercase text-white leading-tight">
+                JUGA TERBUKA KEPADA NON-MUSLIM
+              </span>
+            </motion.button>
           </div>
         </motion.div>
       )}
